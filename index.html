@@ -1393,28 +1393,13 @@ function importCode(code){
   }catch(e){ return false; }
 }
 function openBackup(){
-  sheet('<h2>Резервная копия</h2>'+
-    '<p style="opacity:.75;font-size:13px;line-height:1.45;margin:0 0 10px">Прогресс хранится в браузере и пропадёт при очистке данных. Скопируй код и сохрани его в заметках или мессенджере — потом можно вернуть прогресс или перенести на другое устройство.</p>'+
-    '<button class="link-btn" id="bkCopy" style="margin:0 0 14px">Скопировать код сохранения</button>'+
-    '<textarea id="bkIn" placeholder="Вставь код сюда (PR1:…)" rows="3" style="width:100%;box-sizing:border-box;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.3);color:inherit;padding:8px;font-size:13px"></textarea>'+
-    '<button class="link-btn" id="bkLoad" style="margin-top:8px">Загрузить из кода</button>');
-  $('bkCopy').onclick=function(){
-    var code=exportCode(), ta=$('bkIn');
-    function fallback(){ ta.value=code; ta.select(); try{ document.execCommand('copy'); toast('Код скопирован'); }catch(e){ toast('Выдели и скопируй код вручную'); } }
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(code).then(function(){ toast('Код скопирован'); },fallback);
-    } else fallback();
-  };
-  var armed=false, lb=$('bkLoad');
-  lb.onclick=function(){
-    var v=$('bkIn').value;
-    if(!armed){
-      if(v.replace(/\s+/g,'').indexOf('PR1:')!==0){ toast('Это не код сохранения'); return; }
-      armed=true; lb.textContent='Нажми ещё раз — текущий прогресс заменится'; setTimeout(function(){ armed=false; lb.textContent='Загрузить из кода'; },3500); return;
-    }
-    if(importCode(v)){ toast('Прогресс загружен'); setTimeout(function(){ location.reload(); },500); }
-    else toast('Код повреждён или неполный');
-  };
+  var s=sheet('<div style="text-align:center;font-size:54px;line-height:1;margin-top:6px;filter:drop-shadow(0 6px 18px rgba(52,208,88,.35))">☁️</div>'+
+    '<h2>Всё хранится на сервере</h2>'+
+    '<p class="d">Резервные копии и коды больше не нужны — твой прогресс надёжно сохраняется в облаке.</p>'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:16px;padding:12px 14px"><div style="font-size:22px;line-height:1.1">📱</div><div style="text-align:left"><div style="font-weight:800;font-size:14.5px;margin-bottom:2px">На любом устройстве</div><div style="opacity:.7;font-size:13px;line-height:1.4">Зайди с телефона, планшета или компьютера — твой прогресс уже будет там.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:16px;padding:12px 14px"><div style="font-size:22px;line-height:1.1">🔄</div><div style="text-align:left"><div style="font-weight:800;font-size:14.5px;margin-bottom:2px">Всё сохраняется само</div><div style="opacity:.7;font-size:13px;line-height:1.4">Ничего копировать и переносить не нужно: данные синхронизируются автоматически.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:16px;padding:12px 14px"><div style="font-size:22px;line-height:1.1">🧹</div><div style="text-align:left"><div style="font-weight:800;font-size:14.5px;margin-bottom:2px">Не страшна очистка браузера</div><div style="opacity:.7;font-size:13px;line-height:1.4">Даже если очистить данные или переустановить приложение, прогресс не пропадёт.</div></div></div>'+
+    '<div style="text-align:center;color:var(--green);font-weight:700;font-size:13px;margin-top:2px">✓ Просто играй — мы позаботимся о сохранении</div>'+
+    '<button class="link-btn" id="bkOk" style="margin-top:4px">Понятно</button>');
+  $('bkOk').onclick=function(){ s.close(); };
 }
 
 function openLegend(){
@@ -1498,7 +1483,7 @@ function renderProfile(){
       '<button class="menu-i" id="mBP"><span>🎖️ Батл Пасс</span><span>'+(bpReady()?'награды!':'ур. '+bpLevel())+' ›</span></button>'+
       '<button class="menu-i" id="mGuide"><span>📖 Справка и бонусы</span><span>›</span></button>'+
       '<button class="menu-i" id="mCloud"><span>☁️ Облако</span><span>'+(window.__cloudInfo?window.__cloudInfo():'—')+'</span></button>'+
-      '<button class="menu-i" id="mBackup"><span>💾 Резервная копия</span><span>›</span></button>'+
+      '<button class="menu-i" id="mBackup"><span>🛡️ Сохранение данных</span><span>на сервере ›</span></button>'+
       '<button class="menu-i" id="mSound"><span>'+(state.sound?'🔊':'🔇')+' Звук</span><span>'+(state.sound?'включён':'выключен')+'</span></button>'+
     '</div>';
   if(state.best){
