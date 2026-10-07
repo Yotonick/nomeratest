@@ -2637,6 +2637,7 @@ async function refresh(){                    // вернулись в прило
   try{
     var r=await api('GET',null,5000);
     if(r.status===200&&r.json.exists&&r.json.rev>(meta.rev||0)&&!meta.dirty){
+      if(typeof spinning!=='undefined'&&spinning) return;
       adoptServer(r.json.data,r.json.rev); status='загружено из облака';
       showMsg('☁️ Загружен прогресс с другого устройства'); setTimeout(function(){ location.reload(); },1200);
     }else if(r.status===200) status='синхронизировано';
@@ -2649,7 +2650,7 @@ function showMsg(t){
 
 window.__cloudQueue=queue;
 window.__cloudMarkDirty=function(force){ if(!enabled) return; meta.uid=uid; meta.dirty=true; meta.force=!!force; seq++; writeMeta(); };
-window.__cloudInfo=function(){ return status+' ›'; };
+window.__cloudInfo=function(){ return status+(enabled?' · v'+(meta.rev||0):'')+' ›'; };
 window.__cloudSyncNow=async function(){
   if(!enabled) return status==='открой игру из Telegram'?'Облако работает только внутри Telegram':'Не задан адрес сервера в index.html';
   if(meta.dirty){ clearTimeout(timer); await push(); } else await refresh();
@@ -2660,6 +2661,12 @@ document.addEventListener('visibilitychange',function(){
   if(document.hidden){ if(meta.dirty){ clearTimeout(timer); push(); } }
   else refresh();
 });
+// Telegram (особенно десктоп) не всегда шлёт visibilitychange, поэтому проверяем сервер ещё и по таймеру/фокусу.
+window.addEventListener('focus',function(){ refresh(); });
+window.addEventListener('pageshow',function(){ refresh(); });
+window.addEventListener('online',function(){ if(meta.dirty) schedule(100); else refresh(); });
+try{ if(tg&&tg.onEvent){ tg.onEvent('activated',function(){ refresh(); }); tg.onEvent('deactivated',function(){ if(meta.dirty){ clearTimeout(timer); push(); } }); } }catch(e){}
+setInterval(function(){ if(!document.hidden) refresh(); },10000);
 window.addEventListener('pagehide',function(){ if(meta.dirty){ clearTimeout(timer); push(); } });
 
 function start(){
