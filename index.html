@@ -384,6 +384,21 @@ html[data-theme] .eggfx{opacity:1}
 .ghero{background:linear-gradient(135deg,#1c2a1f,#1a191e 60%);border-radius:22px;padding:16px 18px;font-size:14px;line-height:1.5;color:#d6d3de}
 .ghero b{color:#fff}
 .evt{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.08em}
+.back.evmodal{align-items:center;padding:20px;background:rgba(4,3,8,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);animation:evfade .25s ease-out}
+.evmodal .sheet{max-width:410px;max-height:88vh;border-radius:30px;padding:28px 22px 22px;gap:12px;text-align:center;align-items:stretch;
+  background:radial-gradient(120% 70% at 50% 0%,rgba(74,222,128,.17),transparent 62%),linear-gradient(#1e1d24,#131217);
+  border:1px solid rgba(74,222,128,.38);box-shadow:0 30px 80px -10px rgba(0,0,0,.85),0 0 70px -22px var(--green);animation:evpop .38s cubic-bezier(.2,1.3,.4,1)}
+.evmodal .grab{display:none}
+.evmodal .evico{width:88px;height:88px;margin:0 auto 2px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:46px;line-height:1;
+  background:radial-gradient(circle at 50% 35%,rgba(74,222,128,.28),rgba(74,222,128,.07));border:1px solid rgba(74,222,128,.45);box-shadow:0 0 44px -6px rgba(74,222,128,.6)}
+.evmodal .evt{font-size:11.5px;letter-spacing:.14em;opacity:.9}
+.evmodal .evh{font-size:23px;font-weight:800;line-height:1.2;color:#fff;margin:0}
+.evmodal .evx{font-size:17px;line-height:1.5;color:#dcd9e6;margin:2px 0 10px}
+.evmodal .evr{font-size:17px;line-height:1.5;text-align:center;margin:4px 0 10px;padding:16px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.evmodal .pill{width:100%;height:58px;font-size:16px;margin:0 0 8px}
+@keyframes evpop{from{opacity:0;transform:translateY(18px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes evfade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.back.evmodal,.evmodal .sheet{animation:none}}
 .evx{font-size:15.5px;line-height:1.5;color:#e6e3ee;margin:6px 0 12px}
 .evr{background:#1a191e;border-radius:16px;padding:14px;font-size:15px;line-height:1.45;margin:8px 0 12px}
 .alog{height:150px;overflow:auto;background:#141318;border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:6px;font-size:13.5px}
@@ -428,6 +443,110 @@ button,.case,.mt,.tab,.pill,.spin,.auto,.icon-btn,.bp-cell,.chip,.toggle,.menu-i
 img,svg{-webkit-user-drag:none;-webkit-touch-callout:none}
 input,textarea{-webkit-user-select:text;user-select:text;font-size:16px}
 .prof,.sheet,.scr,.mpanel,.bp-scroll{overscroll-behavior:contain}
+/* ===== v16: путешествия ===== */
+.fpw{container-type:inline-size;width:100%}
+.fplate{display:flex;width:100%;aspect-ratio:var(--ar);background:var(--bg);color:var(--fg);border:max(1.5px,1.1cqw) solid var(--bd);border-radius:max(4px,1.8cqw);overflow:hidden;font-family:var(--plate-font);font-weight:700}
+.fp-flag{flex:0 0 13%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5%;color:#fff}
+.fp-flag b{font-size:calc(var(--fs)*.4*1cqw);font-weight:800;line-height:1}
+.fp-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;min-width:0}
+.fp-txt{font-size:calc(var(--fs)*1cqw);letter-spacing:.03em;white-space:nowrap}
+.fp-top{font-size:calc(var(--fs)*.5*1cqw);margin-bottom:1.5cqw;white-space:nowrap}
+.fmini{flex:0 0 112px;width:112px}
+.tv-mapcard{padding:10px 8px 8px;background:#111015}
+.tv-map{width:100%;height:auto;display:block}
+.tv-pt{cursor:pointer}
+.tv-pulse{animation:tvp 1.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes tvp{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.tv-legend{display:flex;justify-content:center;gap:14px;font-size:11.5px;color:var(--dim);margin-top:4px}
+.tv-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.tv-pvs{display:flex;flex-direction:column;gap:8px}
+.tv-pv{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--dim)}
+.tv-pv .fpw{flex:0 0 112px;width:112px}
+.stb{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px}
+.stb span{flex:0 0 86px;color:var(--dim)}.stb .xp{flex:1;margin:0;height:8px}.stb b{flex:0 0 28px;text-align:right;font-variant-numeric:tabular-nums}
+.stl{font-size:12px;color:var(--dim);margin:2px 0 10px}.stl b{font-weight:800}
+/* ===== v17: номера стран по фото, поездки ===== */
+.by-l{flex:0 0 14%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:5% 0 4%;color:var(--fg)}
+.by-l b{font-size:4.8cqw;font-weight:800;line-height:1;letter-spacing:.02em}
+.by-fl{display:block;width:64%;aspect-ratio:2/1;background:linear-gradient(90deg,#fff 0 6%,#cf101a 6% 12%,#fff 12% 18%,transparent 18%),linear-gradient(#cf101a 0 66%,#00a73c 66%);box-shadow:0 0 0 .3cqw rgba(0,0,0,.25)}
+.kz-fl{display:block;width:64%;aspect-ratio:2/1;background:radial-gradient(circle at 50% 50%,#ffe14d 0 20%,transparent 22%),#00afca;box-shadow:0 0 0 .3cqw rgba(0,0,0,.25)}
+.fplate.by .fp-txt,.fplate.kz .fp-txt{font-weight:800;letter-spacing:.01em}
+.fplate.by .fp-txt s{text-decoration:none;display:inline-block;margin:0 .03em}
+.fplate.by .fp-txt em{font-style:normal;font-size:.58em;color:#0a8a3d;margin-left:.2em}
+.kz-r{flex:0 0 17%;display:flex;align-items:center;justify-content:center;border-left:max(1px,.6cqw) solid var(--bd)}
+.kz-r span{font-size:calc(var(--fs)*.8cqw);font-weight:800;line-height:1}
+.fplate.us{flex-direction:column;align-items:center;justify-content:center;border-width:max(1.5px,.9cqw)}
+.us-top{font-size:calc(var(--fs)*.64cqw);line-height:1;margin-bottom:2.5cqw;white-space:nowrap}
+.us-txt{font-size:calc(var(--fs)*1cqw);letter-spacing:.06em;font-weight:900;line-height:1;font-family:'Arial Black',Arial,Helvetica,sans-serif;white-space:nowrap}
+.fplate.jp{flex-direction:column;justify-content:space-between;padding:4% 5% 5%;border-radius:max(5px,3.2cqw)}
+.jp-top{display:flex;align-items:center;justify-content:center;gap:4cqw;font-size:10.5cqw;line-height:1;font-weight:700;white-space:nowrap}
+.jp-top i{width:3.2cqw;height:3.2cqw;border-radius:50%;background:var(--fg);flex:none}
+.jp-top b{font-size:1.3em;font-weight:800}
+.jp-bot{display:flex;align-items:flex-end;justify-content:center;gap:3cqw;flex:1;white-space:nowrap}
+.jp-k{font-size:16cqw;line-height:1;font-weight:800;margin-bottom:2cqw}
+.jp-n{font-size:30cqw;line-height:.95;font-weight:800;font-family:var(--plate-font)}
+.tv-cost .srow{font-size:13px}
+.tv-sk{display:flex;justify-content:space-between;align-items:center;gap:8px}
+
+/* ===== v18: тур + презентация «Путешествий» ===== */
+.tour{position:fixed;inset:0;z-index:90}
+.tour-bg{position:absolute;inset:0;background:rgba(4,3,9,.58);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);-webkit-mask:radial-gradient(circle at var(--x) var(--y),transparent calc(var(--r) - 1px),#000 var(--r));mask:radial-gradient(circle at var(--x) var(--y),transparent calc(var(--r) - 1px),#000 var(--r));animation:tfade .5s ease both}
+.tour-ring{position:absolute;left:calc(var(--x) - var(--r));top:calc(var(--y) - var(--r));width:calc(var(--r)*2);height:calc(var(--r)*2);border-radius:50%;border:2.5px solid #38bdf8;box-shadow:0 0 22px #38bdf8,inset 0 0 18px rgba(56,189,248,.45);pointer-events:none;animation:tring 1.5s ease-in-out infinite}
+.tour-hit{position:absolute;left:calc(var(--x) - var(--r));top:calc(var(--y) - var(--r));width:calc(var(--r)*2);height:calc(var(--r)*2);border-radius:50%;background:transparent}
+.tour-tip{position:absolute;left:50%;transform:translateX(-50%);width:min(320px,86vw);text-align:center;background:linear-gradient(160deg,#1e2b4a,#241a3d);border:1px solid #38bdf866;border-radius:20px;padding:14px 16px;font-weight:700;font-size:14.5px;line-height:1.4;box-shadow:0 12px 40px rgba(0,0,0,.55);animation:tpop .5s .15s cubic-bezier(.2,1.4,.4,1) both}
+.tour-tip b{display:block;font-size:17px;margin-bottom:4px;background:linear-gradient(90deg,#7dd3fc,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tour-tip small{display:block;margin-top:6px;color:#a29eae;font-weight:600;font-size:12px}
+@keyframes tfade{from{opacity:0}to{opacity:1}}
+@keyframes tring{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.09);opacity:.65}}
+@keyframes tpop{from{opacity:0;transform:translate(-50%,14px) scale(.9)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+.tvi{position:fixed;inset:0;z-index:85;display:flex;flex-direction:column;background:#07060c;overflow:hidden;animation:tfade .35s ease both}
+.tvi::before{content:"";position:absolute;inset:-20%;background:radial-gradient(50% 40% at 20% 15%,color-mix(in srgb,var(--c) 45%,transparent),transparent 70%),radial-gradient(60% 45% at 85% 85%,rgba(244,114,182,.28),transparent 70%);transition:background .6s;pointer-events:none}
+.tvi-top{position:relative;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 4px;max-width:440px;width:100%;margin:0 auto}
+.tvi-dots{display:flex;gap:6px}.tvi-dots i{width:7px;height:7px;border-radius:4px;background:#ffffff33;transition:.35s}.tvi-dots i.on{width:24px;background:var(--c)}
+.tvi-x{width:36px;height:36px;border-radius:50%;background:#ffffff14;font-size:15px}
+.tvi-view{position:relative;flex:1;overflow:hidden;max-width:440px;width:100%;margin:0 auto}
+.tvi-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.3,.9,.3,1)}
+.tvi-sl{flex:0 0 100%;height:100%;overflow:auto;padding:6px 18px 16px;display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.tvi-sl h1{margin:2px 0 0;font-size:27px;font-weight:800;text-align:center;letter-spacing:-.02em;line-height:1.1}
+.tvi-sl h1 span{background:linear-gradient(90deg,var(--c),#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tvi-sl p{margin:0;color:#b9b5c6;font-size:14.5px;line-height:1.5;text-align:center}
+.tvi-sl p b{color:#fff}
+.tvi-art{border-radius:24px;background:linear-gradient(180deg,#0f1630,#120d24);border:1px solid #ffffff14;padding:8px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.tvi-g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tvi-c{border-radius:20px;padding:12px;background:linear-gradient(160deg,color-mix(in srgb,var(--k) 22%,#16151b),#16151b);border:1px solid color-mix(in srgb,var(--k) 40%,transparent);display:flex;flex-direction:column;gap:6px;animation:tpop2 .6s both}
+.tvi-c:nth-child(2){animation-delay:.08s}.tvi-c:nth-child(3){animation-delay:.16s}.tvi-c:nth-child(4){animation-delay:.24s}
+@keyframes tpop2{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
+.tvi-c .e{font-size:28px;line-height:1}.tvi-c b{font-size:14px}.tvi-c span{font-size:12px;color:#a9a5b7;line-height:1.35}
+.tvi-c .fpw{margin:2px 0}
+.tvi-row{display:flex;align-items:center;gap:10px;border-radius:16px;background:#ffffff0d;padding:10px 12px;font-size:13px;color:#cfcbdb}
+.tvi-row .e{font-size:22px}.tvi-row b{color:#fff}.tvi-row em{margin-left:auto;font-style:normal;font-weight:800;color:var(--c);white-space:nowrap}
+.tvi-ft{position:relative;max-width:440px;width:100%;margin:0 auto;padding:6px 18px calc(16px + env(safe-area-inset-bottom,0px));display:flex;gap:10px}
+.tvi-ft button{height:54px;border-radius:27px;font-weight:800;font-size:16px}
+.tvi-next{flex:1;color:#04121f;background:linear-gradient(90deg,var(--c),#f0abfc);box-shadow:0 8px 28px color-mix(in srgb,var(--c) 45%,transparent)}
+.tvi-prev{flex:0 0 54px;background:#ffffff14;font-size:20px}
+.tvi-arc{stroke-dasharray:4 4;animation:tdash 1.2s linear infinite}
+@keyframes tdash{to{stroke-dashoffset:-16}}
+.tv-help{align-self:center;background:#ffffff12;border-radius:16px;padding:8px 14px;font-size:12.5px;font-weight:700;color:#7dd3fc}
+.sheet>*{flex-shrink:0}
+.bet-list{flex-shrink:0;overflow:visible}
+.bet-list .bet-row:first-child{border-radius:22px 22px 0 0}.bet-list .bet-row:last-child{border-radius:0 0 22px 22px}
+.bet-row{min-height:68px}
+.bet-row.leg{position:relative;overflow:hidden;min-height:84px;padding:20px 18px;background:linear-gradient(105deg,rgba(250,204,21,.26),rgba(244,114,182,.12) 60%,rgba(250,204,21,.06));box-shadow:inset 0 0 0 1.5px rgba(250,204,21,.55),0 0 22px rgba(250,204,21,.18)}
+.bet-row.leg::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-18deg);animation:betshine 3.2s ease-in-out infinite}
+.bet-row.leg .n{font-size:18px;text-shadow:0 0 14px rgba(250,204,21,.5)}
+@keyframes betshine{0%,55%{left:-80px}100%{left:115%}}
+
+/* ===== v19: рулетка страны ===== */
+.abwrap{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;padding:4px 0}
+.abwrap #abPlate{width:min(100%,340px)}
+.abtag{font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--dim);text-transform:uppercase}
+.abbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:16px;background:linear-gradient(105deg,rgba(56,189,248,.18),rgba(244,114,182,.1));border:1px solid rgba(56,189,248,.35);font-size:13px;font-weight:700}
+.abbar[hidden]{display:none}
+.abbar button{flex:none;padding:7px 12px;border-radius:12px;background:#ffffff1a;font-weight:800;font-size:12.5px}
+.abbar button:disabled{opacity:.4}
+.brk{font-size:11.5px;color:var(--dim);line-height:1.3;margin-top:2px}
+.brk b{color:#fb923c;font-weight:700}
+.brk.loc b{color:#34d058}
 </style>
 </head>
 <body>
@@ -485,6 +604,8 @@ input,textarea{-webkit-user-select:text;user-select:text;font-size:16px}
     </div></div>
   </div>
 
+  <div class="abwrap" id="abWrap" hidden><div class="rays" id="raysA"></div><div class="abtag" id="abTag"></div><div id="abPlate"></div></div>
+
   <div class="stage" id="stage" hidden>
     <div class="rays" id="raysS"></div>
     <div class="strip-view" id="stripView"><div class="strip-mark"></div><div class="strip" id="strip"></div></div>
@@ -495,6 +616,7 @@ input,textarea{-webkit-user-select:text;user-select:text;font-size:16px}
   <div class="breakdown" id="breakdown"></div>
 
   <div class="actions">
+    <div class="abbar" id="abBar" hidden></div>
     <div class="hint" id="hint" hidden></div>
 
     <div id="roulettePane" style="display:flex;flex-direction:column;gap:10px">
@@ -534,9 +656,9 @@ function __startGame(){
 
 /* ================= SETTINGS ================= */
 var START_BALANCE = 100000;   // стартовый баланс
-var XP_BY_TIER    = [5,8,14,25,45,80,140,250,450,800];
-function xpNeed(level){ return 10 + 20*level; }
-function levelReward(level){ return 5000*level; }
+var XP_BY_TIER    = [5,7,11,18,32,55,95,160,260,400];
+function xpNeed(level){ return Math.round(30*Math.pow(level,1.3)); }   // ур.30 ≈ 5 ч игры, ур.100 ≈ 3 суток чистого времени
+function levelReward(level){ return Math.round((1500+250*level)/100)*100; }   // раньше 5000×ур. — главный источник инфляции
 
 /* ================= DATA ================= */
 var LETTERS = ['А','В','Е','К','М','Н','О','Р','С','Т','У','Х'];
@@ -598,7 +720,8 @@ var BETS = [
  {name:'Обычная крутка',sub:'любой номер',price:1000,min:0,color:'#f2f1f5'},
  {name:'Необычный и выше',sub:'гарантия редкости · ×8 к цене',price:8000,min:1,color:'#4ade80'},
  {name:'Редкий и выше',sub:'гарантия редкости · ×35 к цене',price:35000,min:2,color:'#38bdf8'},
- {name:'Эпический и выше',sub:'гарантия редкости · ×110 к цене',price:110000,min:3,color:'#b45cf5'}
+ {name:'Эпический и выше',sub:'гарантия редкости · ×125 к цене',price:125000,min:3,color:'#b45cf5'},
+ {name:'Легендарная крутка',sub:'только легендарные · ×480 к цене',price:480000,min:4,max:4,color:'#facc15'}
 ];
 /* Кейсы: шанс «легендарка+» как на фото */
 function caseW(low,p,split){
@@ -671,13 +794,24 @@ function analyze(digits,letters,region){
   return b;
 }
 function classify(v){ for(var i=TIERS.length-1;i>=0;i--) if(v>=TIERS[i].base[0]) return TIERS[i]; return TIERS[0]; }
+var VALUE_CAP = 0;   /* потолок цены, напр. 20000000; 0 = выкл. */
 function rollPlate(ws,src){
-  var tier=pickTierW(ws), digits=rollDigits(tier), letters=rollLetters(tier), region=pick(REGIONS);
-  var bonuses=analyze(digits,letters,region);
-  var mult=bonuses.reduce(function(m,x){return m*x.mult;},1);
-  var target=logRand(tier.base[0],tier.base[1]);
-  var base=Math.max(100, target/Math.max(mult,1));
-  var value=Math.round(base*mult);
+  var tier=pickTierW(ws), target=logRand(tier.base[0],tier.base[1]);
+  if(VALUE_CAP) target=Math.min(target,VALUE_CAP);
+  var digits,letters,bonuses,mult,tries=0;
+  do{
+    digits=rollDigits(tier); letters=rollLetters(tier);
+    bonuses=analyze(digits,letters,pick(REGIONS));
+    mult=bonuses.reduce(function(m,x){return m*x.mult;},1);
+    tries++;
+  }while(mult>target/100 && tries<12);
+  var region=pick(REGIONS);
+  if(mult>target/100){
+    digits=pick(DIGITS)+pick(DIGITS)+pick(DIGITS);
+    letters=[pick(LETTERS),pick(LETTERS),pick(LETTERS)];
+  }
+  bonuses=analyze(digits,letters,region);
+  var value=Math.round(target);
   return {digits:digits,letters:letters,region:region,bonuses:bonuses,value:value,tier:classify(value),src:src||'roulette'};
 }
 
@@ -846,7 +980,7 @@ function itemHTML(x,win){ return '<div class="it'+(win?' win':'')+'" style="--tc
 /* ---- stage ---- */
 var stageMode=null, STEP=110, tickRAF=0;
 function plateWrapEl(){ return document.querySelector('#app .plate-wrap'); }
-function showStage(on){ $('stage').hidden=!on; plateWrapEl().hidden=on; if(!on) stageMode=null; }
+function showStage(on){ $('stage').hidden=!on; var ab=abOn(); plateWrapEl().hidden=on||ab; var w=$('abWrap'); if(w){ w.hidden=on||!ab; if(ab&&!on) abIdle(); } if(!on) stageMode=null; }
 function setHero(p){
   $('hero').innerHTML=carSVG(p.car)+'<div class="nm">'+p.car.n+'</div><div class="sb">'+CAR_TYPE[p.car.ty]+'</div>';
   $('hero').hidden=false;
@@ -975,7 +1109,7 @@ function load(){
       if(st.maxBalance<state.balance) st.maxBalance=state.balance;
       state.stats=st;
       state.sound=s.sound!==false;
-      state.auto=s.auto||{keep:3,stop:false}; state.wheel=s.wheel||{last:0}; state.admin=s.admin||{codes:[]}; state.promo=s.promo||{used:[]}; state.tasks=s.tasks||null; state.eggs=s.eggs||{}; state.col=s.col||null; state.turbo=(s.turbo&&typeof s.turbo==='object')?{own:!!s.turbo.own,on:!!s.turbo.on}:{own:false,on:false}; state.bp=s.bp||null; state.ev=s.ev||null; state.themeSel=s.themeSel||null;
+      state.auto=s.auto||{keep:3,stop:false}; state.wheel=s.wheel||{last:0}; state.admin=s.admin||{codes:[]}; state.promo=s.promo||{used:[]}; state.tasks=s.tasks||null; state.eggs=s.eggs||{}; state.trip=(s.trip&&typeof s.trip==='object')?s.trip:null; state.col=s.col||null; state.turbo=(s.turbo&&typeof s.turbo==='object')?{own:!!s.turbo.own,on:!!s.turbo.on}:{own:false,on:false}; state.bp=s.bp||null; state.tripCd=(typeof s.tripCd==='number')?s.tripCd:0; state.ev=s.ev||null; state.themeSel=s.themeSel||null; state.tut=s.tut||{}; state.abroad=(s.abroad&&typeof s.abroad==='object')?s.abroad:null;
     }
   }catch(e){}
 }
@@ -1068,6 +1202,8 @@ var ACH=[
  {id:'rp1',ic:'🛠️',t:'Автомеханик',d:'Отремонтируй машину',max:1,r:10000,cur:function(){return state.stats.repairs||0;}},
  {id:'tu1',ic:'🔧',t:'Тюнер',d:'Прокачай машину',max:1,r:15000,cur:function(){return state.stats.tunes||0;}},
  {id:'tu10',ic:'🏁',t:'Автосервис',d:'Сделай 10 стадий тюнинга',max:10,r:150000,cur:function(){return state.stats.tunes||0;}},
+ {id:'tr1',ic:'✈️',t:'Турист',d:'Съезди в 1 путешествие',max:1,r:20000,cur:function(){return state.stats.trips||0;}},
+ {id:'tr10',ic:'🌍',t:'Дальнобойщик',d:'Соверши 10 путешествий',max:10,r:200000,cur:function(){return state.stats.trips||0;}},
  {id:'col1',ic:'📚',t:'Первая коллекция',d:'Забери награду за 1 коллекцию',max:1,r:50000,cur:function(){return colClaimed();}},
  {id:'col6',ic:'🗃️',t:'Музей на дому',d:'Забери награды за 6 коллекций',max:6,r:500000,cur:function(){return colClaimed();}}
 ];
@@ -1108,7 +1244,7 @@ function showResult(p){
     $('caption').textContent=p.car.n+' · '+CAR_TYPE[p.car.ty];
     $('breakdown').innerHTML='<div class="none">Из контейнера «'+CASES[p.caseIdx].name.replace(' контейнер','')+'»</div>';
   }else{
-  $('caption').textContent='Регион '+p.region[0]+' · '+p.region[1];
+  $('caption').textContent=p.cc?(p.flag+' '+p.region):'Регион '+p.region[0]+' · '+p.region[1];
   var h='';
   p.bonuses.forEach(function(b){ h+='<div>'+b.label+'<b>'+fmtMult(b.mult)+'</b></div>'; });
   $('breakdown').innerHTML=h||'<div class="none">Без особых комбинаций</div>';
@@ -1123,7 +1259,7 @@ function clearResult(){
   $('rPrice').textContent='—';
   $('caption').textContent='';
   $('breakdown').innerHTML='';
-  $('rays').classList.remove('on'); $('raysS').classList.remove('on');
+  $('rays').classList.remove('on'); $('raysS').classList.remove('on'); if($('raysA')) $('raysA').classList.remove('on');
 }
 function renderCases(){
   var h='', g='';
@@ -1138,15 +1274,17 @@ function renderCases(){
   el.querySelectorAll('.case').forEach(function(b){ b.onclick=function(){ SND.click(); openCaseSheet(+b.getAttribute('data-i')); }; });
 }
 function renderBet(){
+  if(abOn()){ var C0=cOf(state.abroad.cid); $('betName').textContent=C0.fl+' '+C0.n+' · осталось '+abLeft(); $('betName').style.color=TIER_UI[C0.tier].c; $('betPrice').textContent=curPrice()?fmt(curPrice()):'бонус'; return; }
   var b=curBet();
   $('betName').textContent=b.name; $('betName').style.color=b.color;
   $('betPrice').textContent=fmt(b.price);
 }
 function updateControls(){
+  renderBet(); renderAbBar();
   if(!state.pending||spinning) clearEgg();
   var pend=!!state.pending&&state.pending.kind!=='car'&&!spinning;
-  var price=curBet().price;
-  var minPrice=BETS[0].price;
+  var price=curPrice();
+  var minPrice=abOn()?price:BETS[0].price;
   var canSpin=!state.pending&&!spinning&&!auto.on&&state.balance>=price;
   var broke=!state.pending&&!spinning&&state.balance<minPrice;
   var anyCase=state.cases.some(function(x){return x>0;});
@@ -1158,11 +1296,11 @@ function updateControls(){
   $('casesPane').hidden=!(mode==='cases'&&!pend&&!spinning&&!dead);
   $('spinBtn').disabled=!canSpin;
   $('spinLabel').textContent=auto.on?'Автокрутка…':(spinning?'Крутится…':'Крутить');
-  $('spinCost').textContent=fmt(price);
+  $('spinCost').textContent=price?fmt(price):'бонус';
   $('spinCost').hidden=spinning||auto.on;
-  $('betBtn').disabled=spinning||auto.on;
+  $('betBtn').disabled=spinning||auto.on||abOn();
   $('autoBtn').classList.toggle('on',auto.on);
-  $('autoBtn').disabled=!auto.on&&(spinning||!!state.pending);
+  $('autoBtn').disabled=abOn()||(!auto.on&&(spinning||!!state.pending));
   $('autoLbl').textContent=auto.on?'СТОП':'АВТО';
   $('tabR').classList.toggle('on',mode==='roulette'); $('tabC').classList.toggle('on',mode==='cases');
   $('tabR').disabled=$('tabC').disabled=spinning||auto.on;
@@ -1213,7 +1351,7 @@ function revealFX(p){
   SND.reveal(t);
   var car=p.kind==='car';
   if(t>=1&&!car){ var pe=$('plateEl'); pe.classList.remove('pop','shine'); void pe.offsetWidth; pe.classList.add('pop'); if(t>=2) pe.classList.add('shine'); }
-  if(t>=3) $(car?'raysS':'rays').classList.add('on');
+  if(t>=3) $(car?'raysS':(p.cc?'raysA':'rays')).classList.add('on');
   if(BURSTS[t]) burst(BURSTS[t],col);
   if(t>=4){
     var f=document.createElement('div'); f.className='flash';
@@ -1230,19 +1368,19 @@ function applyReveal(p){
   p.xpApplied=true;
   var st=state.stats;
   st.tiers[p.tier.id]++; st.totalValue+=p.value;
-  if(p.kind!=='car'){
+  if(p.kind!=='car'&&!p.cc){
     if(p.digits[0]===p.digits[1]&&p.digits[1]===p.digits[2]) st.tripleD++;
     if(p.letters[0]===p.letters[1]&&p.letters[1]===p.letters[2]) st.tripleL++;
     if(p.digits==='777') st.n777++;
     var eg=eggOf(p); if(eg){ state.eggs[eg.id]=(state.eggs[eg.id]||0)+1; }
   }
-  if(p.kind==='car') colNote(null,p.car.id); else colNote(plateText(p));
+  if(p.kind==='car') colNote(null,p.car.id); else if(!p.cc) colNote(plateText(p));
   state.xp+=XP_BY_TIER[p.tier.id];
   var gained=0, lvUp=false;
   while(state.xp>=xpNeed(state.level)){
     state.xp-=xpNeed(state.level); state.level++; lvUp=true; gained+=levelReward(state.level);
   }
-  if(!state.best||p.value>state.best.value){
+  if(!p.cc&&(!state.best||p.value>state.best.value)){
     state.best=p.kind==='car'?{kind:'car',carId:p.car.id,text:p.car.n,value:p.value,tierName:p.tier.name,tierColor:p.tier.color}
       :{text:plateText(p),regionCode:p.region[0],value:p.value,tierName:p.tier.name,tierColor:p.tier.color};
   }
@@ -1255,17 +1393,19 @@ function applyReveal(p){
 function startReveal(p,after){
   state.pending=p; save(); clearResult(); updateControls();
   if(p.kind!=='car') showStage(false);
-  (p.kind==='car'?animateCase:animate)(p,function(){
+  (p.kind==='car'?animateCase:(p.cc?animateAbroad:animate))(p,function(){
     spinning=false; showResult(p); revealFX(p); applyReveal(p); updateControls();
     if(after) after(p);
   });
 }
 function doSpin(){
   if(spinning||state.pending) return;
+  if(abOn()) return doSpinAbroad();
   var b=curBet();
   if(state.balance<b.price){ SND.error(); return; }
   ac(); spinning=true;
-  var p=rollPlate(minWeights(b.min),'roulette');
+  var ws=minWeights(b.min); if(b.max!==undefined) ws=ws.map(function(w,i){return i>b.max?0:w;});
+  var p=rollPlate(ws,'roulette');
   changeBalance(-b.price,true);
   state.spins++; state.stats.roulette++; state.stats.spent+=b.price;
   if(state.bet>state.stats.maxBet) state.stats.maxBet=state.bet;
@@ -1284,20 +1424,27 @@ function openCase(i){
 }
 function sellCurrent(){
   var p=state.pending; if(!p||spinning) return;
-  state.pending=null; state.stats.earned+=p.value; state.stats.sold++;
-  SND.coin(); changeBalance(p.value); save(); updateControls();
+  var v=p.value, cut=0;
+  if(p.cc) cut=abDebtCut(v), v-=cut;
+  state.pending=null; state.stats.earned+=v; state.stats.sold++;
+  if(p.cc&&state.abroad) state.abroad.earned+=v;
+  SND.coin(); changeBalance(v); save(); updateControls();
+  if(cut) toast('Из выручки удержан долг · −'+fmt(cut));
+  abAfterStep();
 }
 function keepCurrent(){
   var p=state.pending; if(!p||spinning) return;
   var uid=Date.now()+'_'+Math.random().toString(36).slice(2);
-  state.inventory.unshift(p.kind==='car'
+  if(p.cc){ state.inventory.unshift({id:uid,text:p.text,top:p.top,ov:p.ov,regionCode:'',region:p.region,fmt:p.fmt,cc:p.cc,flag:p.flag,base:p.base,mult:p.mult,value:p.value,tierName:p.tier.name,tierColor:p.tier.color}); if(state.abroad) state.abroad.kept++; }
+  else state.inventory.unshift(p.kind==='car'
     ?{id:uid,kind:'car',carId:p.car.id,text:p.car.n,region:CAR_TYPE[p.car.ty],value:p.value,tierName:p.tier.name,tierColor:p.tier.color}
     :{id:uid,text:plateText(p),regionCode:p.region[0],region:p.region[1],value:p.value,tierName:p.tier.name,tierColor:p.tier.color});
   state.pending=null; SND.click(); save(); updateControls(); checkAch();
   if(!auto.on) toast('Номер в гараже');
+  abAfterStep();
 }
 function restart(){
-  state.balance=START_BALANCE; state.wheel={last:0}; state.tasks=null; $('caseScr').hidden=true; state.inventory=[]; state.pending=null; state.spins=0;
+  state.balance=START_BALANCE; state.wheel={last:0}; state.tasks=null; $('caseScr').hidden=true; state.inventory=[]; state.trip=null; state.abroad=null; state.tripCd=0; state.pending=null; state.spins=0;
   state.level=1; state.xp=0; state.best=null; state.cases=padCases([]); state.bet=0; state.bp=null; state.ev=null; state.eggs={}; state.themeSel=null; clearEgg(); state.col=null; craftSel=[];
   state.daily={last:null,streak:0,best:0}; state.ach={}; state.stats=freshStats();
   stageMode=null; shownBal=state.balance; save(); renderBalance(); renderLevel(); renderBet(); clearResult(); updateControls();
@@ -1330,14 +1477,16 @@ function startAuto(){
 function sheet(html,onclose){
   var back=document.createElement('div'); back.className='back';
   back.innerHTML='<div class="sheet"><div class="grab"></div>'+html+'</div>';
+  var api={el:back,locked:false};
   function close(){ back.remove(); if(onclose) onclose(); }
-  back.addEventListener('click',function(e){ if(e.target===back) close(); });
+  back.addEventListener('click',function(e){ if(e.target===back&&!api.locked) close(); });
   document.body.appendChild(back);
-  return {el:back,close:close};
+  api.close=close;
+  return api;
 }
 function openBetSheet(){
   var rows=BETS.map(function(b,i){
-    return '<button class="bet-row" data-i="'+i+'"><div><div class="n" style="color:'+b.color+'">'+b.name+'</div><div class="s">'+b.sub+'</div></div>'+
+    return '<button class="bet-row'+(b.max===4?' leg':'')+'" data-i="'+i+'"><div><div class="n" style="color:'+b.color+'">'+(b.max===4?'🌟 ':'')+b.name+'</div><div class="s">'+b.sub+'</div></div>'+
       '<div class="p">'+fmt(b.price)+'<span class="chk'+(i===state.bet?'':' no')+'">'+(i===state.bet?'✓':'')+'</span></div></button>';
   }).join('');
   var s=sheet('<h2>Ставка</h2><p class="d">Дороже крутка — выше гарантированная редкость. Цена примерно равна средней стоимости такого номера, так что это не бесплатные деньги, а быстрый путь к редким номерам.</p><div class="bet-list">'+rows+'</div>');
@@ -1447,7 +1596,7 @@ function claimDaily(){
 /* ================= PROFILE ================= */
 var pview='main';
 var fromMenu=false;
-function openProfile(view){ pview=view||'main'; fromMenu=!!view; $('prof').hidden=false; document.body.style.overflow='hidden'; renderProfile(); $('prof').scrollTop=0; }
+function openProfile(view){ fxRefresh(); pview=view||'main'; fromMenu=!!view; $('prof').hidden=false; document.body.style.overflow='hidden'; renderProfile(); $('prof').scrollTop=0; }
 function closeProfile(){ clearInterval(wTimer); $('prof').hidden=true; document.body.style.overflow=''; }
 function head(title,back){
   return '<div class="prof-head"><button class="back-btn" id="pBack" aria-label="Назад">‹</button><h2>'+title+'</h2></div>';
@@ -1464,6 +1613,7 @@ function renderProfile(){
   if(pview==='guide') return renderGuide();
   if(pview==='col') return renderCol();
   if(pview==='craft') return renderCraft();
+  if(pview==='travel') return renderTravel();
   if(pview==='show') return renderShow();
   if(pview==='themes') return renderThemes();
   var need=xpNeed(state.level), cnt=Object.keys(state.ach).length;
@@ -1580,32 +1730,63 @@ function colName(h){var n=parseInt(h.slice(1),16),r=n>>16&255,g=n>>8&255,b=n&255
 function tierIdOf(x){for(var i=0;i<TIERS.length;i++) if(TIERS[i].name===x.tierName) return i; return 0;}
 function isPlate(p){return p.kind!=='car';}
 function runCaseScr(p){
-  var c=CASES[p.caseIdx],WIN=44,total=54,h='',i,sc=$('caseScr'),CD=turboOn()?1700:6000;
-  for(i=0;i<total;i++) h+=itemHTML(i===WIN?{car:p.car,tier:p.tier}:randItem(c),false);
-  sc.innerHTML='<h1>'+c.name+'</h1><div class="sub-title" style="margin:0;font-size:15px">Крутим…</div><div class="cs-view" id="csView"><div class="cs-mk"></div><div class="strip" id="csStrip">'+h+'</div></div><button class="skip" id="csSkip">Пропустить</button>';
-  sc.hidden=false;
-  var st=$('csStrip'),vw=$('csView').clientWidth||360,fin=false,last=-1;
-  st.style.transform='translateX('+(vw/2-52)+'px)'; void st.offsetWidth;
-  var finalX=vw/2-52-WIN*STEP+(Math.random()-.5)*70;
-  requestAnimationFrame(function(){ st.style.transition='transform '+CD+'ms cubic-bezier(.08,.72,.14,1)'; st.style.transform='translateX('+finalX+'px)'; });
-  function tick(){ var m=new DOMMatrix(getComputedStyle(st).transform),idx=Math.floor((vw/2-m.m41)/STEP); if(idx!==last){last=idx;SND.tick();} csRAF=requestAnimationFrame(tick); }
-  csRAF=requestAnimationFrame(tick);
+  var c=CASES[p.caseIdx],WIN=44,total=54,items=[],i,sc=$('caseScr'),CD=turboOn()?1700:6000,IW=104;
+  function bez(x1,y1,x2,y2){
+    function cx(t){ return 3*x1*t*(1-t)*(1-t)+3*x2*t*t*(1-t)+t*t*t; }
+    function cy(t){ return 3*y1*t*(1-t)*(1-t)+3*y2*t*t*(1-t)+t*t*t; }
+    return function(x){ if(x<=0) return 0; if(x>=1) return 1; var lo=0,hi=1,m=0,k; for(k=0;k<24;k++){ m=(lo+hi)/2; if(cx(m)<x) lo=m; else hi=m; } return cy(m); };
+  }
+  var ease=bez(.08,.72,.14,1);
+  try{
+    for(i=0;i<total;i++) items.push(i===WIN?{car:p.car,tier:p.tier}:randItem(c));
+    sc.innerHTML='<h1>'+c.name+'</h1><div class="sub-title" style="margin:0;font-size:15px">Крутим…</div><div class="cs-view" id="csView"><div class="cs-mk"></div><div class="strip" id="csStrip" style="display:block;position:relative;height:100%;padding:0;will-change:auto"></div></div><button class="skip" id="csSkip">Пропустить</button>';
+    sc.hidden=false;
+  }catch(e){ spinning=false; showCarCard(p); revealFX(p); applyReveal(p); updateControls(); return; }
+  /* В DOM держим только видимые машины (5–6 штук) — длинная лента из 54 штук
+     на мобильных GPU превращается в слой шире текстурного лимита и рисуется чёрной. */
+  var st=$('csStrip'),vw=$('csView').clientWidth||360,fin=false,last=-1,nodes={},off=0,t0=0;
+  var dist=WIN*STEP-(Math.random()-.5)*70;
+  function render(o){
+    var kmin=Math.max(0,Math.floor((o-vw/2+IW/2-IW)/STEP)), kmax=Math.min(total-1,Math.ceil((o+vw/2+IW/2)/STEP)), k;
+    Object.keys(nodes).forEach(function(q){ if(+q<kmin||+q>kmax){ nodes[q].remove(); delete nodes[q]; } });
+    for(k=kmin;k<=kmax;k++){
+      var el=nodes[k];
+      if(!el){
+        var d=document.createElement('div'); d.innerHTML=itemHTML(items[k],false); el=d.firstChild;
+        el.setAttribute('data-k',k); el.style.position='absolute'; el.style.top='12px'; el.style.width=IW+'px'; el.style.flex='none';
+        st.appendChild(el); nodes[k]=el;
+      }
+      el.style.left=(vw/2-IW/2+k*STEP-o)+'px';
+    }
+  }
   function finish(delay){
     if(fin) return; fin=true; clearTimeout(csT); cancelAnimationFrame(csRAF);
-    st.children[WIN].classList.add('win');
+    render(dist);
+    var wn=nodes[WIN]; if(wn) wn.classList.add('win');
     var T=p.tier.id, wait=delay;
     if(T>=4){
       wait=(T>=6?2600:1600)-(delay<300?900:0);
       sc.style.setProperty('--gc',p.tier.color); sc.classList.add('drama');
-      $('csView').classList.add('glowing'); st.children[WIN].classList.add('bigwin');
+      $('csView').classList.add('glowing'); if(wn) wn.classList.add('bigwin');
       var sub=sc.querySelector('.sub-title'); if(sub){ sub.textContent=T>=6?'Невероятно…':'Что-то редкое…'; sub.style.color=p.tier.color; }
       for(var k=0;k<(T>=6?9:5);k++) tone(500+k*130,k*.22,.35,'triangle',.06+k*.008);
       if(navigator.vibrate){ try{ navigator.vibrate(T>=6?[40,60,40,60,40,60,120]:[30,50,30,50,90]); }catch(e){} }
     }
     setTimeout(function(){ sc.classList.remove('drama'); spinning=false; showCarCard(p); revealFX(p); applyReveal(p); updateControls(); },wait);
   }
-  csT=setTimeout(function(){ finish(turboOn()?250:450); },CD+80);
-  $('csSkip').onclick=function(){ if(fin) return; st.style.transition='none'; st.style.transform='translateX('+finalX+'px)'; finish(200); };
+  function frame(now){
+    if(fin) return;
+    if(!t0) t0=now;
+    var t=Math.min(1,(now-t0)/CD);
+    off=dist*ease(t); render(off);
+    var idx=Math.floor((IW/2+off)/STEP); if(idx!==last){ last=idx; SND.tick(); }
+    if(t>=1) finish(turboOn()?250:450); else csRAF=requestAnimationFrame(frame);
+  }
+  render(0);
+  csRAF=requestAnimationFrame(frame);
+  /* страховка: если rAF встал (фоновая вкладка и т.п.) — докручиваем принудительно */
+  csT=setTimeout(function(){ if(!fin) finish(turboOn()?250:450); },CD+400);
+  $('csSkip').onclick=function(){ if(fin) return; finish(200); };
 }
 function showCarCard(p){
   var sc=$('caseScr');
@@ -1629,39 +1810,44 @@ function carToFleet(p,pl){
   state.inventory.unshift(it); state.pending=null; save(); checkAch();
 }
 function plateSheet(car,cb){
-  var pls=state.inventory.filter(isPlate);
+  var pls=state.inventory.filter(function(x){return isPlate(x)&&!plateLocked(x);});
   if(!pls.length){ toast('В гараже нет номеров — выбей номер в рулетке'); return; }
   var cid=tierIdOf(car),rows=pls.map(function(p){
     var ok=tierIdOf(p)>=cid;
-    return '<button class="bet-row" data-id="'+p.id+'"><div style="flex:0 0 118px">'+plateHTML(p.text,p.regionCode)+'</div><div style="flex:1;padding-left:14px"><div class="n">'+fmt(p.value)+'</div><div class="s"><span style="color:'+p.tierColor+';font-weight:700">'+p.tierName+'</span> · '+(ok?'<span style="color:#34d058;font-weight:700">под стать +10%</span>':'не под стать')+'</div></div></button>';
+    return '<button class="bet-row" data-id="'+p.id+'"><div style="flex:0 0 118px">'+plateAny(p)+'</div><div style="flex:1;padding-left:14px"><div class="n">'+fmt(p.value)+'</div><div class="s"><span style="color:'+p.tierColor+';font-weight:700">'+p.tierName+'</span> · '+(ok?'<span style="color:#34d058;font-weight:700">под стать +10%</span>':'не под стать')+'</div></div></button>';
   }).join('');
   var s=sheet('<h2>Какой номер повесить</h2><p class="d">На '+car.text+'</p><div class="bet-list">'+rows+'</div>');
   s.el.querySelectorAll('.bet-row').forEach(function(b){ b.onclick=function(){ var id=b.getAttribute('data-id'),pl=state.inventory.filter(function(x){return x.id===id;})[0]; s.close(); if(pl) cb(pl); }; });
 }
 function sellItem(id){
   var it=state.inventory.filter(function(p){return p.id===id;})[0]; if(!it) return;
-  takeOut(id); var v=it.value+(it.plate?it.plate.value:0);
+  if(it.busy){ toast('Машина в поездке'); return; } if(plateLocked(it)){ toast('Номер на штрафстоянке'); return; }
+  fxRefresh(); var v=itemSale(it), dcut=0; if(state.abroad&&state.abroad.debt>0&&it.cc===state.abroad.cid){ dcut=abDebtCut(v); v-=dcut; } takeOut(id);
   state.stats.sold+=it.plate?2:1; state.stats.earned+=v; SND.coin(); changeBalance(v); save(); updateControls();
+  if(dcut) toast('Из выручки удержан долг · −'+fmt(dcut));
 }
 function renderGarage(){
-  var pl=state.inventory.filter(isPlate),total=pl.reduce(function(s,p){return s+p.value;},0);
+  var pl=state.inventory.filter(isPlate), free=pl.filter(function(p){return !plateLocked(p);}), total=free.reduce(function(s,p){return s+plateSale(p);},0);
   var h='<div class="prof-in">'+head('Гараж')+'<div class="sub-title">Номера · '+pl.length+'</div>';
   if(!pl.length) h+='<div class="empty">Пока пусто. Оставляй понравившиеся номера после крутки — их можно вешать на машины.</div>';
   else{
-    h+='<div class="sum"><span>Оценка коллекции</span><b>'+fmt(total)+'</b></div><button class="sell-all" id="sellAll">Продать все за '+fmt(total)+'</button>';
-    pl.forEach(function(p){ h+='<div class="inv"><div class="mini">'+p.text+' '+p.regionCode+'</div><div class="inv-i"><div class="t" style="color:'+p.tierColor+'">'+p.tierName+'</div><div class="rg">'+p.region+'</div></div><button class="sell-one" data-id="'+p.id+'">Продать '+fmt(p.value)+'</button></div>'; });
+    h+='<div class="sum"><span>Оценка коллекции</span><b>'+fmt(total)+'</b></div>'+(free.length?'<button class="sell-all" id="sellAll">Продать все за '+fmt(total)+'</button>':'');
+    pl.forEach(function(p){ var lk=plateLocked(p);
+      h+='<div class="inv">'+(p.fmt?'<div class="fmini">'+plateFmtHTML(p)+'</div>':'<div class="mini">'+p.text+' '+p.regionCode+'</div>')+
+        '<div class="inv-i"><div class="t" style="color:'+p.tierColor+'">'+p.tierName+'</div><div class="rg">'+(p.flag?p.flag+' ':'')+p.region+(lk?' · 🔒 '+leftTxt(p.lock.until-Date.now()):'')+'</div>'+brokerLine(p)+'</div>'+
+        (lk?'<button class="sell-one rel" data-id="'+p.id+'">Выкупить '+fmt(p.lock.fine)+'</button>':'<button class="sell-one" data-id="'+p.id+'">'+(p.cc&&plateSale(p)!==p.value?'Барыге ':'Продать ')+fmt(plateSale(p))+'</button>')+'</div>'; });
   }
   $('prof').innerHTML=h+'</div>'; wireBack();
-  var sa=$('sellAll'); if(sa) sa.onclick=function(){ pl.forEach(function(p){ takeOut(p.id); }); state.stats.sold+=pl.length; state.stats.earned+=total; SND.coin(); changeBalance(total); save(); updateControls(); renderGarage(); };
-  $('prof').querySelectorAll('.sell-one').forEach(function(b){ b.onclick=function(){ sellItem(b.getAttribute('data-id')); renderGarage(); }; });
+  var sa=$('sellAll'); if(sa) sa.onclick=function(){ free.forEach(function(p){ takeOut(p.id); }); state.stats.sold+=free.length; state.stats.earned+=total; SND.coin(); changeBalance(total); save(); updateControls(); renderGarage(); };
+  $('prof').querySelectorAll('.sell-one').forEach(function(b){ b.onclick=function(){ var id=b.getAttribute('data-id'); if(b.classList.contains('rel')){ var p=findItem(id); if(p) releasePlate(p); } else sellItem(id); renderGarage(); }; });
 }
 function renderFleet(){ state.inventory.forEach(function(x){ if(x.kind==='car') carFix(x); });
   var cs=state.inventory.filter(function(p){return p.kind==='car';});
   var h='<div class="prof-in">'+head('Автопарк')+'<div class="sub-title">Машины · '+cs.length+'</div>';
   if(!cs.length) h+='<div class="empty">Пока пусто. Открывай контейнеры и отправляй машины в автопарк.</div>';
   cs.forEach(function(c){
-    var tot=c.value+(c.plate?c.plate.value:0);
-    h+='<div class="card fl-card"><div class="inv" style="padding:0;background:none"><div class="mini car">'+carSVG(CARS[c.carId])+'</div><div class="inv-i"><div class="t" style="color:'+c.tierColor+'">'+c.text+' · '+c.tierName+'</div><div class="rg">'+(c.plate?'Номер '+c.plate.text+' '+c.plate.regionCode:'Без номера')+' · '+c.cond+'%'+(c.tune?' · 🔧'+c.tune:'')+'</div></div></div>'+
+    var tot=itemSale(c);
+    h+='<div class="card fl-card"><div class="inv" style="padding:0;background:none"><div class="mini car">'+carSVG(CARS[c.carId])+'</div><div class="inv-i"><div class="t" style="color:'+c.tierColor+'">'+c.text+' · '+c.tierName+'</div><div class="rg">'+(c.plate?'Номер '+c.plate.text+' '+c.plate.regionCode:'Без номера')+' · '+c.cond+'%'+(c.tune?' · 🔧'+c.tune:'')+(c.busy?' · ✈️ в поездке':'')+'</div></div></div>'+carMiniStats(c)+
       '<div class="row"><button class="pill ghost fl-show" data-id="'+c.id+'" style="height:44px">Шоурум</button><button class="pill ghost fl-pl" data-id="'+c.id+'" style="height:44px">'+(c.plate?'Снять номер':'Повесить номер')+'</button><button class="pill fl-sell" data-id="'+c.id+'" style="height:44px;font-size:14px">Продать '+fmt(tot)+'</button></div></div>';
   });
   $('prof').innerHTML=h+'</div>'; wireBack();
@@ -1670,6 +1856,7 @@ function renderFleet(){ state.inventory.forEach(function(x){ if(x.kind==='car') 
   $('prof').querySelectorAll('.fl-sell').forEach(function(b){ b.onclick=function(){ sellItem(b.getAttribute('data-id')); renderFleet(); }; });
   $('prof').querySelectorAll('.fl-pl').forEach(function(b){ b.onclick=function(){
     var c=get(b); if(!c) return;
+    if(c.busy){ toast('Машина в поездке'); return; }
     if(c.plate){ state.inventory.unshift(c.plate); c.plate=null; carFix(c); recalcCar(c); save(); toast('Номер снят — он в гараже'); renderFleet(); }
     else plateSheet(c,function(pl){ takeOut(pl.id); attachPlate(c,pl); save(); toast('Номер повешен'); renderFleet(); });
   }; });
@@ -1741,7 +1928,7 @@ function openMenu(){
   var T=[['🏠','#34d058','Гараж',pl,function(){openProfile('garage');}],['🚗','#5ac8fa','Автопарк',cr,function(){openProfile('fleet');}],
    ['✅','#34d058','Задания',tr?'!':0,function(){openProfile('tasks');}],['🎡','#ff9f0a','Колесо',wheelReady()?'!':0,function(){openProfile('wheel');}],
    ['🏆','#ff9f0a','Достижения',0,function(){openProfile('ach');}],['🎁','#ff2d55','Подарок',dailyAvailable()?'!':0,openDaily],
-   ['📚','#30d158','Коллекции',colReady()?'!':0,function(){openProfile('col');}],['⚗️','#bf5af2','Крафт',0,function(){craftSel=[];openProfile('craft');}],['🏁','#fb923c','Гонки','скоро',openRaces],['🎨','#ff6fb5','Темы',0,function(){openProfile('themes');}],['📊','#5e5ce6','Статистика',0,function(){openProfile('stats');}],['🎖️','#f5a524','Батл Пасс',bpReady()?'!':0,openBP],['📖','#0a84ff','Справка',0,function(){openProfile('guide');}],['🎟️','#8e8e93','Промокод',0,openPromo]];
+   ['📚','#30d158','Коллекции',colReady()?'!':0,function(){openProfile('col');}],['⚗️','#bf5af2','Крафт',0,function(){craftSel=[];openProfile('craft');}],['🏁','#fb923c','Гонки','скоро',openRaces],['✈️','#38bdf8','Путешествия',state.level<TRAVEL_MIN_LEVEL?'ур.'+TRAVEL_MIN_LEVEL:(tripBadge()?'!':0),travelEntry],['🎨','#ff6fb5','Темы',0,function(){openProfile('themes');}],['📊','#5e5ce6','Статистика',0,function(){openProfile('stats');}],['🎖️','#f5a524','Батл Пасс',bpReady()?'!':0,openBP],['📖','#0a84ff','Справка',0,function(){openProfile('guide');}],['🎟️','#8e8e93','Промокод',0,openPromo]];
   var back=document.createElement('div'); back.className='mback';
   back.innerHTML='<div class="mpanel"><div class="mgrid">'+T.map(function(t,i){return '<button class="mt" data-i="'+i+'"><i style="background:'+t[1]+'">'+t[0]+'</i>'+t[2]+(t[3]?'<em'+(t[3]==='!'?' class="d"':'')+'>'+(t[3]==='!'?'':t[3])+'</em>':'')+'</button>';}).join('')+'</div><div class="grab" style="margin:12px auto 0"></div></div>';
   back.addEventListener('click',function(e){ if(e.target===back||e.target.className==='grab') back.remove(); });
@@ -1802,6 +1989,10 @@ async function redeem(raw){
     state.inventory.unshift({id:Date.now()+'_'+Math.random().toString(36).slice(2),text:txt,regionCode:rg[0],region:rg[1],value:Math.round(logRand(tr6.base[0],tr6.base[1])),tierName:tr6.name,tierColor:tr6.color});
     msg='номер '+txt+' '+rg[0]; }
   else if(p.type===7){ state.promo.used.push(p.code); state.turbo={own:true,on:true}; msg='⚡ Турбо-режим открыт'; }
+  else if(p.type===8){
+    if(!state.trip||tripReady()) return 'Сейчас нет активной поездки — код не потрачен, активируй его во время путешествия';
+    state.promo.used.push(p.code); promoTripSkip(p.v);
+    msg=p.v>0?'✈️ Поездка сокращена на '+fmtDur(p.v*60000):'✈️ Поездка завершена мгновенно'; }
   else return 'Промокод повреждён';
   SND.daily(); save(); updateControls(); try{ checkAch(); }catch(e){} toast('Промокод: '+msg,'ach');
   return 'ok';
@@ -2145,11 +2336,11 @@ function maybeEvent(){
   if(auto.on||spinning||state.pending||state.spins-state.ev.last<state.ev.gap) return;
   var ok=EVENTS.filter(function(e){return e.ok();}); if(!ok.length) return;
   var e=pick(ok); state.ev={last:state.spins,gap:rnd(17,23)}; save();
-  var h='<div class="evt">'+e.ic+' ЖИЗНЕННАЯ СИТУАЦИЯ · '+e.t.toUpperCase()+'</div><div class="evx">'+e.d+'</div>'+e.o.map(function(o,i){ return '<button class="pill'+(i?'':' green')+'" data-i="'+i+'" style="width:100%;margin-bottom:8px;height:54px;font-size:15px">'+o.l+'</button>'; }).join('');
-  var sh=sheet(h); var box=sh.el.querySelector('.sheet');
+  var h='<div class="evico">'+e.ic+'</div><div class="evt">ЖИЗНЕННАЯ СИТУАЦИЯ</div><div class="evh">'+e.t+'</div><div class="evx">'+e.d+'</div>'+e.o.map(function(o,i){ return '<button class="pill'+(i?'':' green')+'" data-i="'+i+'">'+o.l+'</button>'; }).join('');
+  var sh=sheet(h); sh.locked=true; sh.el.classList.add('evmodal'); var box=sh.el.querySelector('.sheet');
   box.querySelectorAll('button').forEach(function(b){ b.onclick=function(){
-    var r=e.o[+b.getAttribute('data-i')].f(); save(); updateControls(); renderLevel(); SND.coin();
-    box.innerHTML='<div class="grab"></div><div class="evt">'+e.ic+' '+e.t.toUpperCase()+'</div><div class="evr">'+r+'</div><button class="pill green" id="evOk" style="width:100%;height:54px">Дальше</button>';
+    sh.locked=false; var r=e.o[+b.getAttribute('data-i')].f(); save(); updateControls(); renderLevel(); SND.coin();
+    box.innerHTML='<div class="evico">'+e.ic+'</div><div class="evt">РЕЗУЛЬТАТ</div><div class="evh">'+e.t+'</div><div class="evr">'+r+'</div><button class="pill green" id="evOk">Дальше</button>';
     $('evOk').onclick=sh.close; }; });
 }
 var _sellCur=sellCurrent, _keepCur=keepCurrent, _sellItem=sellItem;
@@ -2201,7 +2392,7 @@ function colNote(text,carId){
   c.l[text[0]+text[4]+text[5]]=1;
   var d=text.slice(1,4); if(d[0]===d[1]&&d[1]===d[2]) c.d[d]=1;
 }
-function colScan(){ state.inventory.forEach(function(it){ if(it.kind==='car') colNote(null,it.carId); else colNote(it.text); }); if(state.best&&state.best.kind==='car') colNote(null,state.best.carId); }
+function colScan(){ state.inventory.forEach(function(it){ if(it.kind==='car') colNote(null,it.carId); else if(!it.fmt) colNote(it.text); }); if(state.best&&state.best.kind==='car') colNote(null,state.best.carId); }
 function rxs(r){ return function(c){ return r.test(c.n); }; }
 var COL_CARS=[
  ['jdm','🇯🇵','Японская школа',rxs(/Toyota|Nissan|Subaru|Mazda|Honda|Mitsubishi|Lexus/)],
@@ -2258,7 +2449,7 @@ function renderCol(){
 
 /* ---- крафт ---- */
 var craftTier=0, craftSel=[];
-function craftPool(t){ return state.inventory.filter(function(it){ return tierIdOf(it)===t&&!(it.kind==='car'&&it.plate); }); }
+function craftPool(t){ return state.inventory.filter(function(it){ return tierIdOf(it)===t&&!(it.kind==='car'&&it.plate)&&!it.busy&&!plateLocked(it); }); }
 function itemValue(it){ return it.value; }
 function renderCraft(){
   if(craftTier>8) craftTier=8;
@@ -2275,7 +2466,7 @@ function renderCraft(){
   pool.forEach(function(it){
     var on=craftSel.indexOf(it.id)>=0, car=it.kind==='car';
     h+='<button class="inv craft-it'+(on?' on':'')+'" data-id="'+it.id+'" style="width:100%;text-align:left;'+(on?'outline:2px solid '+TIERS[craftTier].color:'')+'">'+
-      (car?'<div class="mini car">'+carSVG(CARS[it.carId])+'</div>':'<div class="mini">'+it.text+' '+it.regionCode+'</div>')+
+      (car?'<div class="mini car">'+carSVG(CARS[it.carId])+'</div>':(it.fmt?'<div class="fmini">'+plateFmtHTML(it)+'</div>':'<div class="mini">'+it.text+' '+it.regionCode+'</div>'))+
       '<div class="inv-i"><div class="t" style="color:'+it.tierColor+'">'+(car?it.text:it.tierName)+'</div><div class="rg">'+(car?CAR_TYPE[CARS[it.carId].ty]:it.region)+'</div></div><span class="sell-one" style="background:'+(on?TIERS[craftTier].color:'#2a2830')+';color:'+(on?'#04210d':'inherit')+'">'+(on?'✓ ':'')+fmt(it.value)+'</span></button>';
   });
   $('prof').innerHTML=h+'</div>'; wireBack();
@@ -2317,21 +2508,21 @@ var showId=null;
 function showCar(){ return state.inventory.filter(function(x){return x.id===showId&&x.kind==='car';})[0]; }
 function renderShow(){ state.inventory.forEach(function(x){ if(x.kind==='car') carFix(x); });
   var c=showCar(); if(!c){ pview='fleet'; return renderFleet(); }
-  var car=CARS[c.carId], tid=tierIdOf(c), tot=c.value+(c.plate?c.plate.value:0);
+  var car=CARS[c.carId], tid=tierIdOf(c), tot=itemSale(c);
   var h='<div class="prof-in">'+head('Шоурум')+
    '<div class="show-stage" style="--accent:'+(c.tune?TUNE[c.tune-1].neon:c.tierColor)+'">'+(tid>=3||c.tune>=3?'<div class="rays on"></div>':'')+'<div class="show-car">'+carSVG(car)+'</div><div class="show-floor"></div></div>'+
    '<div class="cc-nm" style="text-align:center;font-size:28px">'+c.text+'</div>'+
    '<div class="cc-sub" style="text-align:center"><span style="color:'+c.tierColor+'">'+c.tierName+'</span> · '+colName(car.c)+' · '+CAR_TYPE[car.ty]+'</div>'+
-   (c.plate?'<div style="width:78%;margin:6px auto 0">'+plateHTML(c.plate.text,c.plate.regionCode)+'</div><div class="sub-title" style="margin-top:2px">Номер на машине · '+c.plate.region+'</div>':'<div class="empty" style="margin-top:4px">Номер не повешен</div>')+
+   (c.plate?'<div style="width:78%;margin:6px auto 0">'+plateAny(c.plate)+'</div><div class="sub-title" style="margin-top:2px">Номер на машине · '+c.plate.region+'</div>':'<div class="empty" style="margin-top:4px">Номер не повешен</div>')+
    '<div class="two"><div class="card"><div class="big" style="font-size:20px">'+fmt(tot)+'</div><div class="sm">стоимость</div></div><div class="card"><div class="big" style="font-size:20px">'+c.cond+'%</div><div class="sm">состояние</div></div></div>'+
-   tuneBlock(c)+'<button class="pill green" id="shShare" style="flex:none;height:56px">Поделиться</button>'+
+   carStatsHTML(c)+tuneBlock(c)+'<button class="pill green" id="shShare" style="flex:none;height:56px">Поделиться</button>'+
    '<button class="pill ghost" id="shPl">'+(c.plate?'Снять номер':'Повесить номер')+'</button></div>';
   $('prof').innerHTML=h; wireBack();
   $('pBack').onclick=function(){ pview='fleet'; renderProfile(); $('prof').scrollTop=0; };
   $('shShare').onclick=function(){ shareShow(c); };
   if($('shRep')) $('shRep').onclick=function(){ repairCar(c); };
   if($('shTune')) $('shTune').onclick=function(){ tuneCar(c); };
-  $('shPl').onclick=function(){
+  $('shPl').onclick=function(){ if(c.busy){ toast('Машина в поездке'); return; }
     if(c.plate){ state.inventory.unshift(c.plate); c.plate=null; carFix(c); recalcCar(c); save(); toast('Номер снят — он в гараже'); renderShow(); }
     else plateSheet(c,function(pl){ takeOut(pl.id); attachPlate(c,pl); save(); toast('Номер повешен'); renderShow(); });
   };
@@ -2364,7 +2555,7 @@ function drawShowCard(c,img){
   ctx.fillStyle='#f2f1f5'; ctx.font='800 52px '+body; ctx.fillText(c.text,W/2,590);
   ctx.fillStyle=acc; ctx.font='800 34px '+body; ctx.fillText(c.tierName,W/2,640);
   ctx.fillStyle='#a29eae'; ctx.font='600 26px '+body; ctx.fillText(colName(car.c)+' · '+CAR_TYPE[car.ty]+' · состояние '+c.cond+'%',W/2,684);
-  var tot=c.value+(c.plate?c.plate.value:0);
+  var tot=itemSale(c);
   ctx.fillStyle='#f2f1f5'; ctx.font='800 56px '+body; ctx.fillText(fmt(tot),W/2,764);
   if(c.plate){ plateOnCanvas(ctx,W/2-230,810,460,c.plate.text,c.plate.regionCode); }
   else{ ctx.fillStyle='#6f6b79'; ctx.font='500 26px '+body; ctx.fillText('без номера',W/2,860); }
@@ -2410,13 +2601,13 @@ function spendCar(cost){
   changeBalance(-cost,true); state.stats.spent+=cost; return true;
 }
 function repairCar(c){
-  carFix(c); if(c.cond>=100) return; var cost=repairCost(c);
+  if(c.busy){ toast('Машина в поездке'); return; } carFix(c); if(c.cond>=100) return; var cost=repairCost(c);
   if(!spendCar(cost)) return;
   c.cond=100; recalcCar(c); state.stats.repairs=(state.stats.repairs||0)+1;
   SND.coin(); save(); updateControls(); checkAch(); toast('Машина отремонтирована · −'+fmt(cost)); renderShow();
 }
 function tuneCar(c){
-  carFix(c); if((c.tune||0)>=TUNE.length) return; var cost=tuneCost(c);
+  if(c.busy){ toast('Машина в поездке'); return; } carFix(c); if((c.tune||0)>=TUNE.length) return; var cost=tuneCost(c);
   if(!spendCar(cost)) return;
   c.tune=(c.tune||0)+1; recalcCar(c); state.stats.tunes=(state.stats.tunes||0)+1;
   SND.level(); burst(60,TUNE[c.tune-1].neon); save(); updateControls(); checkAch();
@@ -2465,10 +2656,678 @@ function renderThemes(){
 
 function openRaces(){
   var s=sheet('<div class="big-box" style="font-size:72px;line-height:1">🏁</div><h2>Гонки</h2>'+
-    '<p class="d">Скоро здесь появятся заезды: выставляй машину на гонку, ставь деньги и забирай призы. Тюнинг и состояние машины будут влиять на шансы на победу.</p>'+
+    '<p class="d">Скоро здесь появятся заезды: выставляй машину на гонку, ставь деньги и забирай призы. Тюнинг и состояние машины будут влиять на шансы на победу, а главную роль сыграет стат «Скорость» — тот же, что и в путешествиях.</p>'+
     '<div class="odds"><div class="tier-row"><span style="font-weight:800;color:#fb923c">Статус</span><span>🚧 В разработке</span></div></div>'+
     '<button class="pill green" id="rcOk">Понятно</button>');
   $('rcOk').onclick=s.close;
+}
+
+/* ================= v16: ПУТЕШЕСТВИЯ ================= */
+var TRAVEL_MIN_LEVEL=30;          // с какого уровня открыт режим «Путешествия»
+var FX_SPREAD=.03;               // спред курса: билет дороже на 3%, номера при продаже дешевле на 3%
+var TIER_UI=[null,{n:'СНГ',c:'#34d058'},{n:'Европа',c:'#38bdf8'},{n:'Азия',c:'#fb923c'},{n:'Америка',c:'#f472b6'}];
+function clamp(x,a,b){ return Math.max(a,Math.min(b,x)); }
+function newUid(){ return Date.now()+'_'+Math.random().toString(36).slice(2); }
+function wPick(arr){ var s=0,i; for(i=0;i<arr.length;i++) s+=arr[i].w; var r=Math.random()*s; for(i=0;i<arr.length;i++){ r-=arr[i].w; if(r<=0) return arr[i]; } return arr[arr.length-1]; }
+
+/* ---------- Качество цифр номера (общее для всех стран) ---------- */
+function digitsQ(n,tier){
+  var pTop=[.01,.03,.07,.14,.35,.5,.65,.8,.9,1][tier.id], s='',m=1,lb=null,i;
+  if(n>=3&&Math.random()<pTop){
+    var r=Math.random();
+    if(r<.35){ s=Array(n+1).join(pick(DIGITS)); m=n>=4?30:12; lb='Одинаковые цифры'; }
+    else if(r<.6){ var a=randInt(0,10-n); for(i=0;i<n;i++) s+=(a+i); if(Math.random()<.5) s=s.split('').reverse().join(''); m=6; lb='Последовательность'; }
+    else if(r<.8){ s=Array(n).join('0')+randInt(1,9); m=8; lb='Низкий номер'; }
+    else{ var x=pick(DIGITS),y=pick(DIGITS); while(y===x) y=pick(DIGITS); for(i=0;i<n;i++) s+=(i%2?y:x); m=4; lb='«Шахматный» номер'; }
+  }else{ for(i=0;i<n;i++) s+=pick(DIGITS); }
+  return {s:s,m:m,lb:lb};
+}
+function rndL(alpha,n){ var s='',i; for(i=0;i<n;i++) s+=alpha.charAt(randInt(0,alpha.length-1)); return s; }
+
+/* ---------- ФОРМАТЫ НОМЕРОВ: это данные. Новая страна = новая запись ----------
+   ar — пропорции, bg/fg/bd — цвета, fs — размер шрифта (в % ширины), layout — row|stack,
+   flag/flagCode — левая полоса (или null), re — регулярка формата, norm — обычный номер,
+   prestige — престиж-пул (w — вес, mult — множитель цены, make — генератор текста, ov — свои цвета) */
+var BYL='ABEIKMHOPCTX', BYR=['1','2','3','4','5','6','7'];
+function byReg(){ return pick(BYR); }
+var US_ST={
+ 'California':{s:1,tc:'#c8102e',fg:'#1b3a8f'},'Texas':{tc:'#1b2d6b',fg:'#111'},'New York':{tc:'#1b2d6b',fg:'#1b2d6b'},
+ 'Florida':{tc:'#d9731a',fg:'#13552d'},'Nevada':{tc:'#1d4ed8',fg:'#1d4ed8'},'Arizona':{tc:'#9a1b2e',fg:'#9a1b2e'},
+ 'Colorado':{tc:'#1f7a3a',fg:'#1f7a3a'},'Illinois':{tc:'#c8102e',fg:'#1b2d6b'},'Washington':{tc:'#1f7a3a',fg:'#1b3a8f'},
+ 'Georgia':{s:1,tc:'#d9731a',fg:'#111'}
+};
+var US_KEYS=Object.keys(US_ST), US_L='ABCDEFGHJKLMNPRSTUVWXYZ';
+function usPlate(st,tier){
+  var d, L=function(n){ return rndL(US_L,n); };
+  switch(st){
+   case 'California': d=digitsQ(3,tier); return {text:randInt(1,9)+L(3)+d.s,mult:d.m,label:d.lb};
+   case 'Florida': d=digitsQ(2,tier); return {text:L(3)+' '+L(1)+d.s,mult:d.m,label:d.lb};
+   case 'Nevada': d=digitsQ(3,tier); return {text:d.s+' '+L(1)+randInt(10,99),mult:d.m,label:d.lb};
+   case 'Arizona': d=digitsQ(4,tier); return {text:L(3)+' '+d.s,mult:d.m,label:d.lb};
+   case 'Colorado': d=digitsQ(2,tier); return {text:L(3)+'-'+L(1)+d.s,mult:d.m,label:d.lb};
+   case 'Illinois': d=digitsQ(5,tier); return {text:L(2)+' '+d.s,mult:d.m,label:d.lb};
+   case 'Washington': case 'Georgia': d=digitsQ(4,tier); return {text:L(3)+d.s,mult:d.m,label:d.lb};
+   default: d=digitsQ(4,tier); return {text:L(3)+'-'+d.s,mult:d.m,label:d.lb};
+  }
+}
+var JP_CITY=['Нагоя','Токио','Осака','Йокогама','Саппоро','Кобе','Фукуока','Нэрима'], JP_K=['A','B','C','D','E','F','H','K','L','M','P','S','T','Y'];
+function jpPlate(tier,cls){ var d=digitsQ(4,tier); return {top:pick(JP_CITY)+' '+pick(cls),text:pick(JP_K)+' '+d.s.slice(0,2)+'-'+d.s.slice(2),mult:d.m,label:d.lb}; }
+var PLATE_FORMATS={
+ BY:{ar:4.64,bg:'#fdfdfb',fg:'#111',bd:'#111',fs:15.5,layout:'row',
+  re:/^[A-Z0-9 -]+$/,
+  norm:function(tier,R){ var d=digitsQ(4,tier); return {text:d.s+' '+rndL(BYL,2)+'-'+(R||byReg()),mult:d.m,label:d.lb}; },
+  prestige:[
+   {id:'minsk',label:'Минск · регион 7',w:40,mult:1.6,make:function(t){ return PLATE_FORMATS.BY.norm(t,'7'); }},
+   {id:'truck',label:'Грузовой',w:14,mult:2,make:function(t){ var d=digitsQ(4,t); return {text:rndL(BYL,2)+' '+d.s+'-'+byReg(),mult:d.m}; }},
+   {id:'ev',label:'Электромобиль «E»',w:10,mult:5,ov:{fg:'#0f8a3a'},make:function(t){ var d=digitsQ(3,t); return {text:'E'+d.s+' '+rndL(BYL,2)+'-'+byReg(),mult:d.m}; }},
+   {id:'transit',label:'Транзитный «T»',w:12,mult:3,make:function(t){ var d=digitsQ(4,t); return {text:d.s+' '+rndL(BYL,2)+'-'+byReg()+' T',mult:d.m}; }},
+   {id:'dip',label:'Дипломатический · красный',w:3,mult:14,ov:{bg:'#c4161c',fg:'#fff',bd:'#fff'},make:function(){ return {text:'CD '+('00'+randInt(1,99)).slice(-3)+'-7'}; }}
+  ]},
+ KZ:{ar:4.64,bg:'#fdfdfb',fg:'#111',bd:'#111',fs:14.5,layout:'row',
+  re:/^\d{3} [A-Z]{3} \d{2}$/,
+  norm:function(tier,R){ var d=digitsQ(3,tier); return {text:d.s+' '+rndL('ABCDEFGHIKLMNOPQRSTUVWXYZ',3)+' '+(R||pick(['02','03','04','05','06','07','09','10','11','12','13','14','15','16'])),mult:d.m,label:d.lb}; },
+  prestige:[
+   {id:'astana',label:'Астана · регион 01',w:30,mult:1.5,make:function(t){ return PLATE_FORMATS.KZ.norm(t,'01'); }},
+   {id:'almaty',label:'Алматы · регион 02',w:30,mult:1.4,make:function(t){ return PLATE_FORMATS.KZ.norm(t,'02'); }},
+   {id:'lucky',label:'Счастливые «777»',w:6,mult:10,make:function(){ return {text:'777 '+rndL('ABCDEFGHIKLMNOPQRSTUVWXYZ',3)+' '+pick(['01','02','07'])}; }},
+   {id:'triple',label:'Три одинаковые буквы',w:10,mult:6,make:function(t){ var d=digitsQ(3,t),l=rndL('ABCDEFGHIKLMNOPQRSTUVWXYZ',1); return {text:d.s+' '+l+l+l+' '+pick(['01','02','07']),mult:d.m}; }},
+   {id:'dip',label:'Дипломатический',w:3,mult:12,ov:{bg:'#0b3d91',fg:'#fff',bd:'#fff'},make:function(){ return {text:'CD '+('00'+randInt(1,99)).slice(-3)+' 01'}; }}
+  ]},
+ DE:{ar:4.64,bg:'#fdfdfb',fg:'#111',bd:'#111',fs:14.5,layout:'row',flagCode:'D',flag:'#003399',
+  re:/^[A-Z]{1,2} [A-Z]{1,2} \d{1,4}[EH]?$/,
+  norm:function(tier,sfx){ var d=digitsQ(randInt(1,4),tier); return {text:pick(['B','M','HH','K','F','S','D','L','N','HB','KA'])+' '+rndL('ABCDEFGHKLMNPRSTUVWXYZ',randInt(1,2))+' '+d.s+(sfx||''),mult:d.m,label:d.lb}; },
+  prestige:[
+   {id:'ev',label:'Электро-суффикс «E»',w:25,mult:2,make:function(t){ return PLATE_FORMATS.DE.norm(t,'E'); }},
+   {id:'hist',label:'Исторический «H»',w:15,mult:3,ov:{bg:'#f5efd9'},make:function(t){ return PLATE_FORMATS.DE.norm(t,'H'); }},
+   {id:'short',label:'Короткий «B A 1»',w:6,mult:20,make:function(){ return {text:pick(['B','M','HH'])+' '+pick(['A','X','K'])+' '+randInt(1,9)}; }},
+   {id:'bmw',label:'Именной «B MW»',w:8,mult:9,make:function(t){ var d=digitsQ(randInt(1,3),t); return {text:'B MW '+d.s,mult:d.m}; }}
+  ]},
+ JP:{ar:1.85,bg:'#fdfdfb',fg:'#0d6e3f',bd:'#0d6e3f',fs:19,layout:'stack',flag:null,
+  re:/^.+ .+$/,
+  norm:function(tier){ return jpPlate(tier,['300','330','500','530']); },
+  prestige:[
+   {id:'kei',label:'Кей-кар · жёлтый',w:25,mult:1.8,ov:{bg:'#f6d90b',fg:'#111',bd:'#111'},make:function(t){ return jpPlate(t,['480','500','580']); }},
+   {id:'work',label:'Рабочий · зелёный',w:12,mult:2.2,ov:{bg:'#0d6e3f',fg:'#fff',bd:'#fff'},make:function(t){ return jpPlate(t,['100','200','400','500']); }},
+   {id:'wkei',label:'Рабочий кей · чёрный',w:8,mult:3,ov:{bg:'#101010',fg:'#f6d90b',bd:'#f6d90b'},make:function(t){ return jpPlate(t,['400','480','580']); }},
+   {id:'zoro',label:'Зороме «77-77»',w:6,mult:12,make:function(){ var x=pick(DIGITS); return {top:'Токио 300',text:'A '+x+x+'-'+x+x}; }},
+   {id:'ichi',label:'Номер «···1»',w:8,mult:10,make:function(){ return {top:'Токио 330',text:'A ···1'}; }}
+  ]},
+ US:{ar:2,bg:'#fdfdfb',fg:'#1b3a8f',bd:'#1b3a8f',fs:17,layout:'stack',flag:null,
+  re:/^[0-9A-Z .-]{1,8}$/,
+  norm:function(tier){ var st=Math.random()<.3?'California':pick(US_KEYS), r=usPlate(st,tier); r.top=st; return r; },
+  prestige:[
+   {id:'vanity',label:'Именной (vanity)',w:25,mult:6,make:function(){ return {top:Math.random()<.5?'California':pick(US_KEYS),text:pick(['BOSS','KING','GOAT','MVP','V8 KING','SPEED','LUCKY7','CEO','NO.1','QUEEN','BIG DOG','HOT ROD','1 OF 1','TURBO'])}; }},
+   {id:'low',label:'Низкий номер',w:6,mult:15,make:function(){ return {top:'California',text:pick(['1','7','12','100','777'])}; }},
+   {id:'black',label:'Классический чёрный',w:12,mult:4,ov:{bg:'#111',fg:'#f5c518',bd:'#f5c518',tc:'#f5c518'},make:function(t){ var d=digitsQ(3,t); return {top:'California',text:randInt(1,9)+rndL(US_L,3)+d.s,mult:d.m}; }}
+  ]}
+};
+var PRESTIGE_P=[.02,.05,.1,.2,.4,.55,.7,.8,.9,1];
+function genPlate(F,tier,force){
+  var pr=force||(Math.random()<PRESTIGE_P[tier.id]?wPick(F.prestige):null), r, lbs=[];
+  if(pr){ r=pr.make(tier); r.mult=(r.mult||1)*pr.mult; lbs.push(pr.label); if(pr.ov) r.ov=pr.ov; }
+  else r=F.norm(tier);
+  if(r.label) lbs.push(r.label);
+  r.mult=r.mult||1; r.label=lbs.join(' + ')||null;
+  return r;
+}
+function escH(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function plateFmtHTML(p){
+  var F=PLATE_FORMATS[p.fmt]; if(!F) return '';
+  var o=p.ov||{}, so=(p.fmt==='US'&&US_ST[p.top])||{}, t=String(p.text||'');
+  var bg=o.bg||F.bg, fg=o.fg||so.fg||F.fg, bd=o.bd||so.fg||F.bd;
+  var vars='--ar:'+F.ar+';--bg:'+bg+';--fg:'+fg+';--bd:'+bd+';--fs:'+F.fs;
+  if(p.fmt==='BY'){
+    var ln=t.replace(/ T$/,'').length+(/ T$/.test(t)?1.6:0); vars+=';--fs:'+Math.min(F.fs,Math.round(F.fs*9.6/ln*10)/10);
+    return '<div class="fpw"><div class="fplate by" style="'+vars+'"><div class="by-l"><i class="by-fl"></i><b>BY</b></div><div class="fp-mid"><div class="fp-txt">'+escH(t).replace('-','<s>-</s>').replace(/ T$/,'<em>T</em>')+'</div></div></div></div>';
+  }
+  if(p.fmt==='KZ'){
+    var a=t.split(' '), reg=a.length>=3?a.pop():'';
+    return '<div class="fpw"><div class="fplate kz" style="'+vars+'"><div class="by-l"><i class="kz-fl"></i><b>KZ</b></div><div class="fp-mid"><div class="fp-txt">'+escH(a.join(' '))+'</div></div>'+(reg?'<div class="kz-r"><span>'+escH(reg)+'</span></div>':'')+'</div></div>';
+  }
+  if(p.fmt==='US'){
+    var tc=o.tc||so.tc||'#c8102e', top=p.top||'';
+    return '<div class="fpw"><div class="fplate us" style="'+vars+'"><div class="us-top" style="color:'+tc+';'+(so.s?"font-family:'Brush Script MT','Segoe Script','Snell Roundhand','Lucida Handwriting',cursive;font-style:italic;font-size:calc(var(--fs)*.78cqw)":'font-family:Arial,Helvetica,sans-serif;font-weight:800;letter-spacing:.1em;text-transform:uppercase')+'">'+escH(top)+'</div><div class="us-txt">'+escH(t)+'</div></div></div>';
+  }
+  if(p.fmt==='JP'){
+    var tp=String(p.top||'').trim().split(' '), cls=tp.length>1?tp.pop():'', city=tp.join(' '), m=t.match(/^(\S+)\s+(.*)$/), kana=m?m[1]:'', num=(m?m[2]:t).replace(/・/g,'·');
+    return '<div class="fpw"><div class="fplate jp" style="'+vars+'"><div class="jp-top"><i></i><span>'+escH(city)+' <b>'+escH(cls)+'</b></span><i></i></div><div class="jp-bot"><span class="jp-k">'+escH(kana)+'</span><span class="jp-n">'+escH(num)+'</span></div></div></div>';
+  }
+  var flag=o.flag||F.flag, code=o.flagCode||F.flagCode;
+  return '<div class="fpw"><div class="fplate '+F.layout+'" style="'+vars+'">'+
+    (flag?'<div class="fp-flag" style="background:'+flag+'"><b>'+code+'</b></div>':'')+
+    '<div class="fp-mid">'+(F.layout==='stack'&&p.top?'<div class="fp-top">'+escH(p.top)+'</div>':'')+'<div class="fp-txt">'+escH(t)+'</div></div></div></div>';
+}
+function plateAny(p){ return p.fmt?plateFmtHTML(p):plateHTML(p.text,p.regionCode); }
+
+/* ---------- Штрафстоянка: номер никогда не удаляется ---------- */
+function plateLocked(p){ if(p&&p.lock){ if(Date.now()>=p.lock.until){ delete p.lock; return false; } return true; } return false; }
+function releasePlate(p){
+  if(!plateLocked(p)) return; var fine=p.lock.fine;
+  if(!spendCar(fine)) return; delete p.lock; save(); updateControls(); toast('Номер выкуплен со штрафстоянки · −'+fmt(fine));
+}
+
+/* ---------- Курс валют: формула от времени, одинаковая у всех игроков ---------- */
+var FX={BY:{sym:'Br',base:28},KZ:{sym:'₸',base:.19},DE:{sym:'€',base:99},JP:{sym:'¥',base:.62},US:{sym:'$',base:92}};
+function fxF(cc,t){
+  var h=Math.floor((t||Date.now())/600000)/6, ph=0, i; for(i=0;i<cc.length;i++) ph+=cc.charCodeAt(i)*1.7;
+  return 1+.17*(.55*Math.sin(h/4.1+ph)+.3*Math.sin(h/1.37+ph*2.1)+.15*Math.sin(h/11.3+ph*.5));
+}
+function fxTxt(cc){
+  var f=FX[cc], v=f.base*fxF(cc), up=fxF(cc)>=fxF(cc,Date.now()-3600000);
+  return '1 '+f.sym+' = '+(v<1?v.toFixed(2):v.toFixed(1)).replace('.',',')+' ₽ <span style="color:'+(up?'#34d058':'#fb7185')+'">'+(up?'▲':'▼')+'</span>';
+}
+function cOf(id){ for(var i=0;i<COUNTRIES.length;i++) if(COUNTRIES[i].id===id) return COUNTRIES[i]; return null; }
+function foreignValue(p){ return Math.round(p.base*p.mult*cOf(p.cc).mult*fxF(p.cc)*(1-FX_SPREAD)); }
+function fxRefresh(){
+  state.inventory.forEach(function(x){
+    if(x.cc) x.value=foreignValue(x);
+    if(x.kind==='car'&&x.plate&&x.plate.cc) x.plate.value=foreignValue(x.plate);
+  });
+}
+
+/* ---------- Страны ---------- */
+var COUNTRIES=[
+ {id:'BY',n:'Беларусь',fl:'🇧🇾',tier:1,lvl:30,mode:'road',need:30,wear:8,mins:360,spins:10,min:3,mult:1,lon:27.9,lat:53.9,cd:4,skip:2500000,evP:150000,evM:60,carPct:.03,
+  items:[['🔧','Подготовка и ТО машины',250000,'car'],['⛽','Бензин туда-обратно',420000,'fx'],['🛏️','Ночлег · 2 ночи',310000,'fx'],['🍲','Еда в дороге',160000,'fx'],['🛣️','Дорожные сборы',120000,'fx']],
+  styles:[
+   {id:'law',n:'По правилам',d:'Едешь аккуратно: штрафов нет, но и быстрее не будет — дорога занимает полное время.',t:1,c:1,x:[]},
+   {id:'wild',n:'Нарушаем всё',d:'Обгоны, скорость, сплошная. Время −40%, но камеры ГАИ пришлют штрафы: платишь сразу или получаешь «письмо счастья» с процентами.',t:.6,c:1,x:['cam','cam','cam','cam']}]},
+ {id:'KZ',n:'Казахстан',fl:'🇰🇿',tier:1,lvl:45,mode:'road',need:60,wear:14,mins:840,spins:4,min:4,mult:1.4,lon:67,lat:48,cd:8,skip:6000000,evP:450000,evM:90,carPct:.03,
+  items:[['🔧','Подготовка и ТО машины',1200000,'car'],['⛽','Бензин через степь',2000000,'fx'],['🛏️','Ночлег · юрты и мотели',1400000,'fx'],['🍖','Еда: бешбармак и баурсаки',800000,'fx'],['📄','Оформление и страховка',600000,'flat']],
+  styles:[
+   {id:'day',n:'Только днём',d:'Едешь при свете, ночью спишь. Полное время и никаких сюрпризов.',t:1,c:1,x:[]},
+   {id:'night',n:'Ночью по степи',d:'Гонишь без остановок: время −30%. Но в темноте по трассе бродят верблюды и табуны.',t:.7,c:1,x:['camel','camel']}]},
+ {id:'DE',n:'Германия',fl:'🇩🇪',tier:2,lvl:60,mode:'road',need:55,wear:16,mins:1440,spins:2,min:5,mult:2.4,lon:10.4,lat:51,cd:12,skip:14000000,evP:1500000,evM:120,carPct:.04,
+  items:[['🔧','Подготовка и ТО машины',5000000,'car'],['⛽','Бензин по автобану',10000000,'fx'],['🛏️','Отели · 3 ночи',8000000,'fx'],['🥨','Еда и кофе',3500000,'fx'],['🌿','Эко-зоны и дорожные сборы',3500000,'flat']],
+  styles:[
+   {id:'eco',n:'Спокойные 120',d:'Ограничения соблюдаешь. Время +25%, зато бензин на 20% дешевле.',t:1.25,c:.8,x:[]},
+   {id:'raser',n:'Автобан без лимита',d:'Педаль в пол: время −35%, бензин дороже на 30%. Блитцеры снимают на фото и присылают штрафы.',t:.65,c:1.3,x:['blitz','blitz']}]},
+ {id:'JP',n:'Япония',fl:'🇯🇵',tier:3,lvl:85,mode:'ship',mins:2880,spins:4,min:5,mult:4.5,lon:138,lat:36,cd:24,skip:60000000,evP:6000000,evM:180,carPct:.03,
+  items:[['📦','Контейнер и погрузка',50000000,'flat'],['🛃','Порт и таможенный брокер',25000000,'fx'],['🛏️','Отель в Токио · 5 ночей',22000000,'fx'],['🍣','Еда и суши-туры',12000000,'fx'],['🛡️','Страховка машины',0,'car']],
+  styles:[
+   {id:'calm',n:'Штилевой маршрут',d:'Безопасный путь в обход штормов. Полное время.',t:1,c:1,x:[]},
+   {id:'typhoon',n:'Через сезон тайфунов',d:'Короткий путь сквозь шторма: время −30%, цена −15%. Но тайфун может застопорить судно.',t:.7,c:.85,x:['typhoon']}]},
+ {id:'US',n:'США',fl:'🇺🇸',tier:4,lvl:100,mode:'ship',mins:4320,spins:8,min:5,mult:8,lon:-98,lat:39,cd:36,skip:150000000,evP:15000000,evM:240,carPct:.04,
+  items:[['📦','Контейнер через океан',140000000,'flat'],['🛃','Порт, брокер и таможня',75000000,'fx'],['🛏️','Мотели · Route 66',60000000,'fx'],['🍔','Еда: бургеры и стейки',40000000,'fx'],['⛽','Бензин по США',65000000,'fx'],['🛡️','Страховка машины',0,'car']],
+  styles:[
+   {id:'express',n:'Экспресс-контейнер',d:'Премиальная логистика: время −25%, цена +25%.',t:.75,c:1.25,x:[]},
+   {id:'r66',n:'Route 66 + Вегас',d:'Классический маршрут. В Лас-Вегасе можно рискнуть: 35% получить ещё один секретный номер, иначе деньги уйдут в казино.',t:1,c:1,x:['vegas']}]}
+];
+COUNTRIES.forEach(function(C){ C.spins=10; });   /* в каждой стране ровно 10 круток */
+var SOON=[{n:'Франция',lon:2,lat:46.5},{n:'Китай',lon:104,lat:35},{n:'ОАЭ',lon:54,lat:24},{n:'Бразилия',lon:-52,lat:-12}];
+var HOME={lon:37.6,lat:55.7};
+var _ep=0;
+function expPlate(){ if(_ep) return _ep; var W=0,S=0; TIERS.forEach(function(t){ var a=t.base[0],b=t.base[1]; W+=t.weight; S+=t.weight*(b-a)/Math.log(b/a); }); return (_ep=S/W); }
+/* цена билета теперь складывается из статей расходов страны (см. costRows) */
+function costRows(C,car,st){
+  var rows=[], tot=0, cv=car?carTotalV(car):0, k=st?st.c:1;
+  C.items.forEach(function(it){
+    var v=it[2];
+    if(it[3]==='car') v=Math.max(v,Math.round(cv*C.carPct));
+    else if(it[3]==='fx') v=v*fxF(C.id)*(1+FX_SPREAD);
+    v=Math.round(v*k/1000)*1000; rows.push([it[0],it[1],v]); tot+=v;
+  });
+  return {rows:rows,total:tot};
+}
+function tripCdLeft(){ return Math.max(0,(state.tripCd||0)-Date.now()); }
+function rollForeign(C,minT){
+  var F=PLATE_FORMATS[C.id], tier=pickTierW(minWeights(minT!==undefined?minT:(C.min||0))), g=genPlate(F,tier);
+  var base=Math.max(100,logRand(tier.base[0],tier.base[1])/Math.max(g.mult,1)), ref=Math.round(base*g.mult*C.mult), t2=classify(ref);
+  var it={id:newUid(),text:g.text,top:g.top||null,ov:g.ov||null,regionCode:'',region:C.n+(g.label?' · '+g.label:''),fmt:C.id,cc:C.id,flag:C.fl,
+    base:base,mult:g.mult,value:0,tierName:t2.name,tierColor:t2.color};
+  it.value=foreignValue(it); return it;
+}
+
+/* ---------- Статы машин: «Дальняк» (две шкалы) и «Скорость» ---------- */
+var CAR_BASE={sedan:{r:55,l:70,s:60},hatch:{r:45,l:65,s:55},suv:{r:70,l:72,s:52},sport:{r:40,l:42,s:92},truck:{r:75,l:80,s:44}};
+function carStats(c){
+  carFix(c); var b=CAR_BASE[CARS[c.carId].ty]||CAR_BASE.sedan, t=tierIdOf(c), tu=c.tune||0;
+  var range=clamp(b.r+t*3+tu*6,0,100), rel=clamp(Math.round(b.l*.3+c.cond*.55+t*2+tu*4),0,100), speed=clamp(b.s+t*2+tu*5,0,100), rating=Math.round((range+rel)/2);
+  return {range:range,rel:rel,speed:speed,rating:rating,grade:rating>=85?'S':rating>=70?'A':rating>=55?'B':rating>=40?'C':'D'};
+}
+function statCol(v){ return v>=70?'#34d058':(v>=45?'#facc15':'#fb7185'); }
+function carStatsHTML(c){
+  var s=carStats(c);
+  function bar(n,v){ return '<div class="stb"><span>'+n+'</span><div class="xp"><i style="width:'+v+'%;background:'+statCol(v)+'"></i></div><b>'+v+'</b></div>'; }
+  return '<div class="card"><div class="lv-top"><b style="font-size:18px">Дальняк</b><span style="color:'+statCol(s.rating)+'">'+s.grade+' · '+s.rating+'</span></div>'+
+    bar('Запас хода',s.range)+bar('Надёжность',s.rel)+bar('Скорость',s.speed)+
+    '<p class="lv-note">Запас хода: тип, редкость, тюнинг. Надёжность: состояние, тип, тюнинг. Скорость сокращает время в пути (и будет важна в гонках). Все статы считаются из данных машины — ничего скрытого.</p></div>';
+}
+function carMiniStats(c){ var s=carStats(c); return '<div class="stl">Дальняк <b style="color:'+statCol(s.rating)+'">'+s.grade+' '+s.rating+'</b> · ⛽ '+s.range+' · 🛠 '+s.rel+' · ⚡ '+s.speed+'</div>'; }
+
+/* ---------- План поездки ---------- */
+function carTotalV(c){ return c.value+(c.plate?c.plate.value:0); }
+function tripPlan(c,C,st){
+  var s=carStats(c), p={}, tk=st?st.t:1;
+  if(C.mode==='road'){
+    var spF=1.35-.7*s.speed/100, short=Math.max(0,C.need-s.range);
+    p.mins=Math.max(30,Math.round(C.mins*spF*tk)); p.wear=Math.max(1,Math.round(C.wear*(1.5-1.2*s.rel/100)*(1+short/30)));
+    p.custP=clamp(.08+.5*(100-c.cond)/100,.08,.6); p.short=short;
+  }else{ p.mins=Math.round(C.mins*tk); p.wear=0; p.custP=.1; p.short=0; }
+  return p;
+}
+function evCost(C){ return C.evP; }
+function evMins(C){ return C.evM; }
+var EV_ROAD=[{ic:'🛞',t:'Прокол колеса',d:'Нужен шиномонтаж, иначе придётся ждать помощи на обочине.'},{ic:'🚧',t:'Очередь на границе',d:'Можно заплатить за «быструю полосу» или встать в общую.'},{ic:'🚓',t:'Проверка документов',d:'Инспектор не торопится. Ускорить можно «по-хорошему».'},{ic:'⛈️',t:'Ливень на трассе',d:'Переждать в кафе или проскочить на платном объезде.'},{ic:'🛣️',t:'Дорога перекрыта',d:'Платный объезд или ожидание, пока откроют.'}];
+var EV_SHIP=[{ic:'⚓',t:'Простой в порту',d:'Место на причале освободится не скоро — или оплатить приоритет.'},{ic:'🌊',t:'Шторм на море',d:'Обойти шторм стоит топлива. Переждать — стоит времени.'},{ic:'📦',t:'Перегрузка контейнеров',d:'Ваш контейнер застрял. Приоритетная перегрузка стоит денег.'},{ic:'🛃',t:'Досмотр груза',d:'Очередь на досмотр. Можно ускорить за плату.'}];
+/* особые события стилей поездки: k — множитель к базовой цене страны (evP), debt — штраф «письмом» (×), mins — ожидание (×evM) */
+var EVX={
+ cam:{ic:'📸',t:'Камера ГАИ',d:'Радар засёк превышение. Оплатить штраф на месте или получить «письмо счастья» с процентами при возвращении.',k:1.8,debt:1.6},
+ camel:{ic:'🐪',t:'Верблюды на трассе',d:'Табун вышел на дорогу. Объехать по бездорожью дорого, переждать — долго.',k:2,mins:1.5},
+ blitz:{ic:'⚡',t:'Блитцер на автобане',d:'Фотоаппарат снял превышение. Заплатишь сразу со скидкой или штраф придёт по почте с процентами.',k:1.2,debt:1.5},
+ typhoon:{ic:'🌀',t:'Тайфун',d:'Судно попало в шторм. Обойти — топливо и деньги, переждать — время.',k:2.5,mins:2},
+ vegas:{ic:'🎰',t:'Остановка в Лас-Вегасе',d:'Ночь в Вегасе. Сыграть на большую сумму: 35% — получишь ещё один секретный номер, иначе деньги останутся в казино.',k:6,gamble:1}
+};
+function evInfo(C,ev){
+  var x=ev.x&&EVX[ev.x];
+  if(x) return {ic:x.ic,t:x.t,d:x.d,cost:Math.round(C.evP*x.k/1000)*1000,mins:x.mins?Math.round(C.evM*x.mins):0,debt:x.debt||0,gamble:!!x.gamble};
+  var d=(C.mode==='road'?EV_ROAD:EV_SHIP)[ev.k||0];
+  return {ic:d.ic,t:d.t,d:d.d,cost:C.evP,mins:C.evM,debt:0,gamble:false};
+}
+
+function findItem(id){ return state.inventory.filter(function(x){return x.id===id;})[0]; }
+function tripPending(){ var t=state.trip; if(!t) return null; var n=Date.now(); for(var i=0;i<t.events.length;i++){ var e=t.events[i]; if(!e.done&&e.at<=n) return e; } return null; }
+function tripReady(){ var t=state.trip; return !!(t&&Date.now()>=t.end&&!tripPending()); }
+function tripBadge(){ return !!(state.trip&&(tripPending()||tripReady())); }
+
+function buildEvents(C,st,now,dur){
+  var list=C.mode==='road'?EV_ROAD:EV_SHIP, n=C.tier+1, ev=[], used=[], i, k, j, tmp;
+  for(i=0;i<n;i++){ do{ k=randInt(0,list.length-1); }while(used.indexOf(k)>=0&&used.length<list.length); used.push(k); ev.push({k:k,done:false}); }
+  ((st&&st.x)||[]).forEach(function(x){ ev.push({x:x,done:false}); });
+  for(i=ev.length-1;i>0;i--){ j=randInt(0,i); tmp=ev[i]; ev[i]=ev[j]; ev[j]=tmp; }
+  ev.forEach(function(e,i){ e.at=now+Math.round(dur*(i+1)/(ev.length+1)*(0.92+Math.random()*.16)); });
+  return ev;
+}
+function startTrip(C,car,si){
+  if(state.trip) return;
+  if(state.abroad){ toast('Сначала вернись домой (сейчас ты: '+cOf(state.abroad.cid).n+')'); return; }
+  if(state.level<C.lvl){ toast('Нужен '+C.lvl+' уровень'); return; }
+  if(tripCdLeft()>0){ toast('Отдых после поездки: ещё '+fmtDur(tripCdLeft())); return; }
+  if(!car.plate){ toast('Без номеров на машине границу не пересечь'); SND.error(); return; }
+  if(car.busy){ toast('Машина уже в поездке'); return; }
+  var st=C.styles[si||0]||C.styles[0], plan=tripPlan(car,C,st), cr=costRows(C,car,st);
+  if(!spendCar(cr.total)) return;
+  var now=Date.now(), dur=plan.mins*60000, loot=[];
+  car.busy=true;
+  state.trip={cid:C.id,carId:car.id,start:now,end:now+dur,mode:C.mode,wear:plan.wear,custP:plan.custP,paid:cr.total,st:st.id,debt:0,loot:loot,events:buildEvents(C,st,now,dur)};
+  save(); updateControls(); SND.coin(); renderTravel();
+}
+function resolveEvent(ev,pay){
+  var t=state.trip, C=cOf(t.cid), I=evInfo(C,ev);
+  if(pay){
+    if(!spendCar(I.cost)) return false;
+    if(I.gamble){
+      if(Math.random()<.35){ t.bonus=(t.bonus||0)+1; toast('🎰 Джекпот! В стране тебя ждёт бесплатная секретная крутка'); SND.level(); }
+      else toast('🎰 Не повезло: деньги остались в казино');
+    }
+  }else if(I.debt){ t.debt=(t.debt||0)+Math.round(I.cost*I.debt/1000)*1000; }
+  else if(I.mins){ t.end+=I.mins*60000; }
+  ev.done=true; ev.choice=pay?'pay':'wait'; save(); return true;
+}
+function eventSheet(ev){
+  var t=state.trip, C=cOf(t.cid), I=evInfo(C,ev), done=false;
+  var pl=(I.gamble?'Сыграть · ':(I.debt?'Оплатить штраф · ':'Заплатить '))+fmt(I.cost);
+  var wl=I.debt?'Заплачу потом · '+fmt(Math.round(I.cost*I.debt/1000)*1000)+' при возвращении':(I.gamble?'Проехать мимо':'Подождать · +'+fmtDur(I.mins*60000));
+  var s=sheet('<div class="big-box" style="font-size:64px;line-height:1">'+I.ic+'</div><h2>'+I.t+'</h2><p class="d">'+I.d+'</p>'+
+    '<button class="pill green" id="evPay" style="height:54px">'+pl+'</button>'+
+    '<button class="pill ghost" id="evWait" style="height:auto;min-height:48px;padding:8px 14px;line-height:1.25">'+wl+'</button>'+
+    '<div class="sub-title" style="margin:0">Чем дальше страна, тем дороже цена выбора</div>',function(){ if(!done) tvEventOpen=false; });
+  $('evPay').onclick=function(){ if(resolveEvent(ev,true)){ done=true; tvEventOpen=false; s.close(); renderTravel(); } };
+  $('evWait').onclick=function(){ resolveEvent(ev,false); done=true; tvEventOpen=false; s.close(); renderTravel(); };
+}
+var tvEventOpen=false;
+
+/* ---------- Ускорение: огромные деньги за время ---------- */
+function skipPrice(C,frac){ var rem=Math.max(0,state.trip.end-Date.now())/3600000; return Math.round(C.skip*rem*frac*(1+.5*frac)/1000)*1000; }
+function skipSheet(){
+  var t=state.trip; if(!t||tripReady()) return; var C=cOf(t.cid);
+  var opts=[[.25,'Сократить на 25%'],[.5,'Сократить на 50%'],[1,'Прилететь мгновенно']];
+  var s=sheet('<div class="big-box" style="font-size:64px;line-height:1">⏩</div><h2>Ускорить поездку</h2><p class="d">Частный борт, вертолёт и «нужные люди» на всех границах. Это очень дорого, и чем больше срезаешь, тем выше цена за час. Баланс: '+fmt(state.balance)+'</p>'+
+    opts.map(function(o,i){ var pr=skipPrice(C,o[0]); return '<button class="pill'+(i===2?'':' ghost')+'" data-i="'+i+'" style="height:auto;min-height:54px;padding:8px 14px;line-height:1.25;margin-bottom:8px"'+(state.balance<pr?' disabled style="opacity:.45;height:auto;min-height:54px;margin-bottom:8px"':'')+'>'+o[1]+'<br><span style="font-size:13px;font-weight:700;color:'+(i===2?'#fff':'var(--dim)')+'">'+fmt(pr)+'</span></button>'; }).join(''));
+  s.el.querySelectorAll('button[data-i]').forEach(function(b){ b.onclick=function(){ var o=opts[+b.getAttribute('data-i')]; if(doSkip(o[0])) s.close(); }; });
+}
+function promoTripSkip(min){
+  var t=state.trip, now=Date.now(), rem=t.end-now; if(rem<=0) return;
+  var cut=min>0?Math.min(rem,min*60000):rem, frac=cut/rem; t.end-=cut;
+  t.events.forEach(function(e){ if(e.done) return; if(frac>=1){ e.done=true; e.choice='skip'; }else if(e.at>now) e.at=now+Math.round((e.at-now)*(1-frac)); });
+  if(pview==='travel'){ try{ renderTravel(); }catch(e){} }
+}
+function doSkip(frac){
+  var t=state.trip; if(!t) return false; var C=cOf(t.cid), now=Date.now(), rem=t.end-now; if(rem<=0) return false;
+  var price=skipPrice(C,frac); if(!spendCar(price)) return false;
+  t.end-=Math.round(rem*frac);
+  t.events.forEach(function(e){ if(e.done) return; if(frac>=1){ e.done=true; e.choice='skip'; }else if(e.at>now) e.at=now+Math.round((e.at-now)*(1-frac)); });
+  t.skipped=(t.skipped||0)+price; state.stats.skips=(state.stats.skips||0)+1;
+  save(); updateControls(); SND.coin(); toast('⏩ Время сокращено · −'+fmt(price)); renderTravel(); return true;
+}
+
+/* ---------- Таможня ---------- */
+function tripClaim(){
+  var t=state.trip; if(!t||!tripReady()) return;
+  if(t.cust===undefined){ t.cust=Math.random()<t.custP; save(); }
+  if(t.cust) customsSheet(); else finishTrip(false);
+}
+function customsSheet(){
+  var t=state.trip, C=cOf(t.cid), car=findItem(t.carId), duty=Math.max(Math.round(C.evP*.8/100)*100,Math.round(.04*(car?carTotalV(car):0)*(1+.25*(C.tier-1))/100)*100);
+  var worse=Math.ceil(duty*1.6/100)*100, cheap=Math.max(100,Math.round(duty*.4/100)*100);
+  var s=sheet('<div class="big-box" style="font-size:64px;line-height:1">🛃</div><h2>Таможня</h2><p class="d">Досмотр на границе. Состояние машины влияет на шанс такого события (сейчас шанс был '+Math.round(t.custP*100)+'%). Выбирай:</p>'+
+    '<button class="pill green" id="cuPay" style="height:56px">Заплатить пошлину · '+fmt(duty)+'</button>'+
+    '<button class="pill ghost" id="cuBar" style="height:56px;flex-direction:column;line-height:1.2">Торговаться<br><span style="font-size:12px;color:var(--dim);font-weight:600">50%: '+fmt(cheap)+' · иначе '+fmt(worse)+'</span></button>'+
+    '<button class="pill ghost" id="cuRisk" style="height:56px;flex-direction:column;line-height:1.2;border-color:#fb7185;color:#fb7185">Рискнуть<br><span style="font-size:12px;color:var(--dim);font-weight:600">45%: бесплатно · иначе лучший номер на штрафстоянке</span></button>'+
+    '<div class="sub-title" style="margin:0">Номер не пропадает насовсем: штрафстоянка — это блокировка на время или до выкупа.</div>');
+  s.locked=true;
+  $('cuPay').onclick=function(){ if(!spendCar(duty)) return; s.close(); finishTrip(false); };
+  $('cuBar').onclick=function(){ var good=Math.random()<.5, sum=good?cheap:worse; if(state.balance<worse){ toast('Для торга нужно иметь '+fmt(worse)); SND.error(); return; } spendCar(sum); toast(good?'Удалось договориться':'Не договорились — вышло дороже'); s.close(); finishTrip(false); };
+  $('cuRisk').onclick=function(){ var ok=Math.random()<.45; s.close(); finishTrip(!ok); };
+}
+function finishTrip(impound){
+  var t=state.trip; if(!t) return; var car=findItem(t.carId), C=cOf(t.cid), cond0=car?car.cond:0;
+  if(car){ car.cond=Math.max(1,car.cond-t.wear); car.busy=false; recalcCar(car); }
+  (t.loot||[]).forEach(function(p){ state.inventory.unshift(p); });   /* старые сохранения: добыча, выбитая до обновления */
+  fxRefresh();
+  var due=t.debt||0, paid=0;
+  if(due>0){ paid=Math.min(state.balance,due); if(paid>0){ changeBalance(-paid,true); state.stats.spent+=paid; } }
+  var owe=(due-paid)+(impound?Math.max(300,Math.round(C.evP*2/100)*100):0);
+  state.tripCd=Date.now()+C.cd*3600000;
+  state.stats.trips=(state.stats.trips||0)+1;
+  var wear=car?cond0-car.cond:0, cname=car?car.text:'', bonus=t.bonus||0;
+  state.trip=null; state.abroad={cid:C.id,left:C.spins,sec:bonus,debt:owe,n:0,spent:0,earned:0,kept:0};
+  if(auto.on) stopAuto();
+  var ap=$('abPlate'); if(ap) ap.dataset.cc='';
+  save(); updateControls(); checkAch(); SND.level();
+  var s=sheet('<h2>'+C.fl+' '+C.n+': добро пожаловать!</h2><p class="d">Рулетка переключена на местные номера: <b>'+C.spins+' круток</b> по '+fmt(abPrice(C))+(bonus?' + '+bonus+' бесплатная секретная':'')+'.'+
+    (wear>0?' '+cname+' потерял '+wear+'% состояния.':'')+(due>0?' Письма со штрафами: −'+fmt(paid)+'.':'')+(owe>0?' Долг '+fmt(owe)+' удержат из первых продаж здесь.':'')+'</p>'+
+    '<div class="card tv-cost" style="background:#1d1c21"><div class="srow"><span>🏷 Продажа '+inC(C.id)+'</span><b>полная цена</b></div><div class="srow"><span>🕴 Дома и в других странах</span><b>только через барыгу (−'+Math.round(BROKERS[C.id].cut*100)+'% и больше)</b></div></div>'+
+    '<button class="pill green" id="trOk">К рулетке</button>',function(){ closeProfile(); });
+  $('trOk').onclick=s.close;
+}
+
+/* ================= РУЛЕТКА СТРАНЫ ================= */
+var AB_PRICE_K=1;   /* множитель цены крутки в стране */
+var BROKERS={
+ BY:{n:'Минский барыга',cut:.12,sit:[['торопится на границу — берёт процент побольше',.05],['знает всех в ГАИ и ценит товар',-.03],['«наличка кончилась», торгуется до последнего',.07],['твой постоянный клиент',-.04],['боится проверки: платит быстро, но мало',.03],['ищет именно такой номер для брата',-.05]]},
+ KZ:{n:'Алматинский перекуп',cut:.15,sit:[['только что вернулся с базара, при деньгах',-.04],['в долгах — просит скидку',.06],['сват министра, но жадный',.04],['давно ищет такие цифры',-.05],['платит чаем и процентами',.08],['ждёт машину из Китая, спешит',.02]]},
+ DE:{n:'Берлинский брокер',cut:.22,sit:[['всё строго по прайсу, плюс комиссия',.03],['на выходных нет клиентов — демпингует',.06],['коллекционер, согласен платить больше',-.06],['требует Anmeldung и берёт «сбор»',.08],['работает через юриста — дорого, зато надёжно',.04],['давно ждал именно этот формат',-.05]]},
+ JP:{n:'Токийский посредник',cut:.26,sit:[['вежливо кланяется и берёт свои 30%',.04],['клиент-коллекционер из Осаки',-.07],['номер не по правилам — «нужна экспертиза»',.08],['работает через якудза-знакомых — быстро и дорого',.06],['обожает редкие цифры',-.05],['конец квартала — нужно закрыть план',-.02]]},
+ US:{n:'Дилер из Лас-Вегаса',cut:.30,sit:[['«ты мне должен за фишки» — минус процент',.08],['богатый турист хочет vanity-номер',-.08],['мафиозная комиссия «за защиту»',.06],['проиграл в казино, ищет денег',.04],['шоумен, платит за красивую историю',-.05],['нужен нал до рассвета, берёт сверху',.05]]}
+};
+function inC(cc){ return {BY:'в Беларуси',KZ:'в Казахстане',DE:'в Германии',JP:'в Японии',US:'в США'}[cc]||'в этой стране'; }
+function hStr(x){ var h=7,i; x=String(x); for(i=0;i<x.length;i++) h=(h*31+x.charCodeAt(i))|0; return Math.abs(h); }
+function brokerOf(p){
+  var B=BROKERS[p.cc]||{n:'Барыга',cut:.2,sit:[['берёт своё',0]]}, h=hStr(p.id+p.cc), sit=B.sit[h%B.sit.length];
+  var cut=clamp(B.cut+sit[1],.05,.6);
+  return {n:B.n,cut:cut,note:sit[0],price:Math.round(p.value*(1-cut))};
+}
+function isLocalSale(p){ return !!(p&&p.cc&&state.abroad&&state.abroad.cid===p.cc); }
+function plateSale(p){ if(!p) return 0; if(!p.cc) return p.value; return isLocalSale(p)?p.value:brokerOf(p).price; }
+function itemSale(x){ return x.value+(x.plate?plateSale(x.plate):0); }
+function brokerLine(p){
+  if(!p.cc) return '';
+  if(isLocalSale(p)) return '<div class="brk loc"><b>🏷 Ты в стране — полная цена</b></div>';
+  var b=brokerOf(p);
+  return '<div class="brk"><b>🕴 '+b.n+' −'+Math.round(b.cut*100)+'%</b> · '+b.note+'. Полная цена — только '+inC(p.cc)+'</div>';
+}
+function abOn(){ return !!(state.abroad&&cOf(state.abroad.cid)); }
+function abLeft(){ var a=state.abroad; return a?(a.left||0)+(a.sec||0):0; }
+function abPrice(C){ return Math.round(BETS[Math.min(C.min||0,BETS.length-1)].price*C.mult*AB_PRICE_K/100)*100; }
+function curPrice(){ if(abOn()){ var a=state.abroad; return (a.sec>0)?0:abPrice(cOf(a.cid)); } return curBet().price; }
+function abDebtCut(v){ var a=state.abroad; if(!a||!(a.debt>0)) return 0; var c=Math.min(a.debt,Math.round(v*.5)); a.debt-=c; return c; }
+function abIdle(){
+  var box=$('abPlate'), a=state.abroad; if(!box||!a||spinning) return;
+  var C=cOf(a.cid), pe=state.pending;
+  $('abTag').textContent=C.fl+' '+C.n+' · номера страны';
+  if(pe&&pe.cc){ box.innerHTML=plateFmtHTML(pe); box.dataset.cc=pe.cc; return; }
+  if(box.dataset.cc!==a.cid||!box.innerHTML){ var g=genPlate(PLATE_FORMATS[a.cid],TIERS[0]); box.innerHTML=plateFmtHTML({fmt:a.cid,text:g.text,top:g.top,ov:g.ov}); box.dataset.cc=a.cid; }
+}
+function animateAbroad(p,cb){
+  var F=PLATE_FORMATS[p.cc], box=$('abPlate'), tb=turboOn(), total=tb?500:1500, t0=Date.now();
+  SND.spin();
+  (function frame(){
+    var el=Date.now()-t0;
+    if(el>=total){ box.innerHTML=plateFmtHTML(p); box.dataset.cc=p.cc; try{ SND.stop(7,0.01); }catch(e){} cb(); return; }
+    var g=genPlate(F,pickTierW(minWeights(0)));
+    box.innerHTML=plateFmtHTML({fmt:p.cc,text:g.text,top:g.top,ov:g.ov});
+    var k=el/total; setTimeout(frame,45+k*k*230);
+  })();
+}
+function doSpinAbroad(){
+  var a=state.abroad, C=cOf(a.cid);
+  if(abLeft()<=0){ leaveAbroad(); return; }
+  var bonus=a.sec>0, price=bonus?0:abPrice(C);
+  if(state.balance<price){ SND.error(); toast('Не хватает денег на крутку'); return; }
+  ac(); spinning=true;
+  var f=rollForeign(C,bonus?6:undefined), lab=f.region.indexOf(' · ')>=0?f.region.slice(f.region.indexOf(' · ')+3):'Особый номер';
+  f.kind='plate'; f.tier=classify(Math.round(f.base*f.mult*C.mult)); f.abroad=true;
+  f.bonuses=[]; if(f.mult>1) f.bonuses.push({label:lab,mult:f.mult});
+  if(C.mult!==1) f.bonuses.push({label:'Страна · '+C.n,mult:C.mult});
+  f.bonuses.push({label:'Курс валюты',mult:Math.round(fxF(C.id)*(1-FX_SPREAD)*100)/100});
+  if(bonus) a.sec--; else{ a.left--; changeBalance(-price,true); state.stats.spent+=price; a.spent+=price; }
+  a.n++; state.spins++; state.stats.roulette++;
+  startReveal(f,null);
+}
+function abAfterStep(){
+  if(state.abroad&&!state.pending&&abLeft()<=0) setTimeout(function(){ if(state.abroad&&!state.pending&&abLeft()<=0) leaveAbroad(); },450);
+}
+function renderAbBar(){
+  var el=$('abBar'); if(!el) return;
+  if(!abOn()){ el.hidden=true; return; }
+  var a=state.abroad, C=cOf(a.cid);
+  el.hidden=false;
+  el.innerHTML='<span>'+C.fl+' '+C.n+' · круток: <b>'+abLeft()+'</b>'+(a.debt>0?' · долг '+fmt(a.debt):'')+'</span><button id="abHomeBtn"'+(spinning||state.pending?' disabled':'')+'>✈️ Домой</button>';
+  $('abHomeBtn').onclick=function(){ leaveAbroadAsk(); };
+}
+function leaveAbroadAsk(){
+  if(!abOn()||spinning||state.pending) return;
+  if(abLeft()<=0){ leaveAbroad(); return; }
+  var a=state.abroad, C=cOf(a.cid);
+  var s=sheet('<h2>Вернуться домой?</h2><p class="d">Неиспользованные крутки ('+abLeft()+') сгорят. Невыкупленные номера останутся в гараже — полную цену за них дадут только '+inC(a.cid)+', остальные продаются через барыгу.</p><button class="pill green" id="abStay">Остаться</button><button class="pill ghost" id="abLeave">Улететь домой</button>');
+  $('abStay').onclick=s.close; $('abLeave').onclick=function(){ s.close(); leaveAbroad(); };
+}
+function leaveAbroad(){
+  var a=state.abroad; if(!a) return; var C=cOf(a.cid);
+  var paid=0; if(a.debt>0){ paid=Math.min(state.balance,a.debt); if(paid>0){ changeBalance(-paid,true); state.stats.spent+=paid; } }
+  state.abroad=null; var ap=$('abPlate'); if(ap) ap.dataset.cc='';
+  save(); updateControls();
+  if(!C) return;
+  var s=sheet('<h2>🏠 Итоги поездки · '+C.fl+' '+C.n+'</h2><p class="d">Круток сделано: '+a.n+' · потрачено '+fmt(a.spent)+' · продано на месте на '+fmt(a.earned)+(paid?' · долг погашен: −'+fmt(paid):'')+'.</p>'+
+    '<div class="sum"><span>Номеров страны в гараже</span><b>'+a.kept+'</b></div><p class="d" style="margin-top:8px">Продать их по полной цене можно только '+inC(a.cid)+' (новая поездка). Дома — через барыгу, у каждого номера своя ситуация.</p><button class="pill green" id="abOk">Отлично</button>');
+  $('abOk').onclick=s.close;
+}
+function abroadCardHTML(){
+  var a=state.abroad, C=cOf(a.cid), col=TIER_UI[C.tier].c;
+  return '<div class="card"><div class="lv-top"><b style="font-size:18px">'+C.fl+' Ты в стране: '+C.n+'</b><span style="color:'+col+'">'+TIER_UI[C.tier].n+'</span></div>'+
+    '<div class="srow"><span>Круток осталось</span><b>'+abLeft()+' из '+C.spins+'</b></div><div class="srow"><span>Цена крутки</span><b>'+fmt(abPrice(C))+'</b></div>'+(a.debt>0?'<div class="srow"><span>Долг по штрафам</span><b style="color:#fb7185">'+fmt(a.debt)+'</b></div>':'')+
+    '<p class="lv-note" style="margin:8px 0">Основная рулетка сейчас крутит местные номера. По полной цене их можно продать только здесь.</p>'+
+    '<button class="pill green" id="abGo" style="width:100%;height:54px">К рулетке</button><button class="pill ghost" id="abHome" style="width:100%;height:48px;margin-top:8px">✈️ Вернуться домой</button></div>';
+}
+
+/* ---------- Карта ---------- */
+var LAND=[
+ [[-168,66],[-150,71],[-125,70],[-95,72],[-82,68],[-64,60],[-56,50],[-66,44],[-76,36],[-81,28],[-90,29],[-97,26],[-97,19],[-88,16],[-83,9],[-78,8],[-92,14],[-105,20],[-115,30],[-124,40],[-124,48],[-135,58],[-150,60]],
+ [[-78,8],[-62,10],[-50,0],[-35,-6],[-40,-22],[-48,-27],[-58,-38],[-65,-45],[-70,-54],[-74,-48],[-72,-30],[-70,-18],[-81,-5]],
+ [[-9,43],[-9,37],[-5,36],[0,38],[3,43],[9,44],[12,42],[16,38],[19,41],[24,38],[27,37],[36,36],[35,32],[34,29],[43,13],[52,16],[58,23],[57,26],[66,25],[72,21],[77,8],[80,15],[88,22],[92,22],[98,16],[100,8],[103,1],[105,9],[109,12],[106,20],[112,22],[122,30],[122,38],[127,35],[129,40],[135,43],[142,52],[160,60],[178,65],[170,70],[140,72],[100,77],[60,70],[30,71],[15,69],[5,62],[8,57],[4,52],[-2,48],[-5,48]],
+ [[-17,15],[-17,21],[-9,32],[-5,36],[10,37],[32,31],[43,12],[51,12],[40,-5],[40,-16],[33,-26],[20,-35],[14,-22],[12,-5],[9,4],[-8,4]],
+ [[130,31],[135,34],[141,39],[142,45],[145,43],[141,36],[135,33]],
+ [[114,-22],[122,-18],[131,-12],[142,-11],[146,-19],[153,-27],[150,-37],[141,-38],[131,-31],[115,-34]]
+];
+function mx(lon){ return lon+180; }
+function my(lat){ return (78-lat)*1.45; }
+function arcPath(C){
+  var x1=mx(HOME.lon),y1=my(HOME.lat),x2=mx(C.lon),y2=my(C.lat), cx=(x1+x2)/2, cy=Math.min(y1,y2)-Math.abs(x2-x1)*.22-8;
+  return 'M'+x1+' '+y1+' Q'+cx+' '+cy+' '+x2+' '+y2;
+}
+var tvSel=null;
+function mapSVG(){
+  var h='<svg viewBox="0 0 360 188" class="tv-map" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="tvDots" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#5b5966"/></pattern></defs>';
+  LAND.forEach(function(poly){ h+='<polygon points="'+poly.map(function(p){return mx(p[0]).toFixed(1)+','+my(p[1]).toFixed(1);}).join(' ')+'" fill="url(#tvDots)" opacity=".95"/>'; });
+  var t=state.trip;
+  if(t){ var C=cOf(t.cid); h+='<path id="tvPath" d="'+arcPath(C)+'" fill="none" stroke="'+TIER_UI[C.tier].c+'" stroke-width="1.2" stroke-dasharray="3 3" opacity=".9"/><circle id="tvDot" r="3.2" fill="#fff" stroke="'+TIER_UI[C.tier].c+'" stroke-width="1.5"/>'; }
+  h+='<rect x="'+(mx(HOME.lon)-2.5)+'" y="'+(my(HOME.lat)-2.5)+'" width="5" height="5" rx="1" fill="#fff"/><text x="'+(mx(HOME.lon)+5)+'" y="'+(my(HOME.lat)-4)+'" font-size="6" fill="#c9c6d2" font-weight="700">Дом</text>';
+  SOON.forEach(function(c){ h+='<circle cx="'+mx(c.lon)+'" cy="'+my(c.lat)+'" r="2" fill="none" stroke="#6b6877" stroke-width=".8"/>'; });
+  COUNTRIES.forEach(function(C){
+    var open=state.level>=TRAVEL_MIN_LEVEL&&state.level>=C.lvl, col=TIER_UI[C.tier].c, x=mx(C.lon), y=my(C.lat), sel=tvSel===C.id;
+    h+='<g class="tv-pt" data-c="'+C.id+'">'+(sel?'<circle cx="'+x+'" cy="'+y+'" r="8" fill="none" stroke="'+col+'" stroke-width="1" class="tv-pulse"/>':'')+
+      '<circle cx="'+x+'" cy="'+y+'" r="'+(open?4:3.2)+'" fill="'+(open?col:'#17161a')+'" stroke="'+col+'" stroke-width="1.4" opacity="'+(open?1:.55)+'"/>'+
+      '<circle cx="'+x+'" cy="'+y+'" r="11" fill="transparent"/>'+(sel?'<text x="'+x+'" y="'+(y+14)+'" text-anchor="middle" font-size="7" fill="#fff" font-weight="800">'+C.n+'</text>':'')+'</g>';
+  });
+  return h+'</svg>';
+}
+
+/* ---------- Экран «Путешествия» ---------- */
+function fmtDur(ms){ var m=Math.ceil(ms/60000); if(m>=1440) return Math.floor(m/1440)+' д '+Math.floor(m%1440/60)+' ч'; if(m>=60) return Math.floor(m/60)+' ч '+(m%60)+' мин'; return m+' мин'; }
+function renderTravel(){
+  fxRefresh(); var t=state.trip, locked=state.level<TRAVEL_MIN_LEVEL;
+  var h='<div class="prof-in">'+head('Путешествия');
+  if(locked) h+='<div class="card"><div class="lv-top"><b style="font-size:18px">Режим закрыт</b><span>ур. '+state.level+' / '+TRAVEL_MIN_LEVEL+'</span></div><div class="xp"><i style="width:'+Math.round(state.level/TRAVEL_MIN_LEVEL*100)+'%"></i></div><p class="lv-note">Путешествия открываются с '+TRAVEL_MIN_LEVEL+'-го уровня. Дальние страны — ещё выше.</p></div>';
+  h+='<button class="tv-help" id="tvHelp">💡 Как это работает</button>';
+  h+='<div class="card tv-mapcard">'+mapSVG()+'<div class="tv-legend">'+[1,2,3,4].map(function(i){ return '<span><i style="background:'+TIER_UI[i].c+'"></i>'+TIER_UI[i].n+'</span>'; }).join('')+'</div></div>';
+  if(t) h+=tripCardHTML(); else if(abOn()) h+=abroadCardHTML(); else if(!locked&&tvSel) h+=countryCardHTML(cOf(tvSel)); else if(!locked) h+='<div class="empty">Выбери точку на карте — это страна, куда можно отправиться за номерами.</div>';
+  $('prof').innerHTML=h+'</div>'; wireBack();
+  $('prof').querySelectorAll('.tv-pt').forEach(function(g){ g.onclick=function(){ if(state.trip||locked||abOn()){ if(abOn()) toast('Ты сейчас в стране — сначала вернись домой'); else if(locked) toast('Режим откроется с '+TRAVEL_MIN_LEVEL+' уровня'); return; } tvSel=g.getAttribute('data-c'); SND.click(); renderTravel(); }; });
+  if($('tvHelp')) $('tvHelp').onclick=function(){ SND.click(); travelIntro(false); };
+  if($('tvGo')) $('tvGo').onclick=function(){ carPickSheet(cOf(tvSel)); };
+  if($('tvClaim')) $('tvClaim').onclick=tripClaim;
+  if($('abGo')) $('abGo').onclick=function(){ SND.click(); closeProfile(); };
+  if($('abHome')) $('abHome').onclick=function(){ leaveAbroadAsk(); };
+  if($('tvSkip')) $('tvSkip').onclick=skipSheet;
+  clearInterval(wTimer); if(t){ wTimer=setInterval(tripTick,1000); tripTick(); }
+}
+var tvWasReady=false;
+function tripTick(){
+  var t=state.trip; if(!t||!$('tvProg')){ clearInterval(wTimer); return; }
+  var n=Date.now(), p=clamp((n-t.start)/(t.end-t.start),0,1), ev=tripPending();
+  $('tvProg').style.width=Math.round(p*100)+'%';
+  var path=$('tvPath'), dot=$('tvDot'); if(path&&dot){ var pt=path.getPointAtLength(path.getTotalLength()*p); dot.setAttribute('cx',pt.x); dot.setAttribute('cy',pt.y); }
+  if(ev&&!tvEventOpen){ tvEventOpen=true; eventSheet(ev); return; }
+  var ready=tripReady();
+  if($('tvLeft')) $('tvLeft').textContent=ev?'Нужно решение в пути':(ready?'Приехали!':'Осталось '+fmtDur(t.end-n));
+  if(ready!==tvWasReady){ tvWasReady=ready; renderTravel(); }
+}
+function tripCardHTML(){
+  var t=state.trip, C=cOf(t.cid), car=findItem(t.carId), col=TIER_UI[C.tier].c, ready=tripReady(); tvWasReady=ready;
+  var evDone=t.events.filter(function(e){return e.done;}).length, st=C.styles.filter(function(x){return x.id===t.st;})[0];
+  return '<div class="card"><div class="lv-top"><b style="font-size:18px">'+C.fl+' '+C.n+'</b><span style="color:'+col+'">'+(C.mode==='road'?'🚗 своим ходом':'🚢 контейнером')+'</span></div>'+
+    (st?'<div class="chips" style="margin-bottom:8px"><span class="chip">'+st.n+'</span>'+(t.debt?'<span class="chip" style="color:#fb7185">штрафы к оплате: '+fmt(t.debt)+'</span>':'')+'</div>':'')+
+    '<div class="inv" style="padding:0;background:none;margin-bottom:10px"><div class="mini car">'+(car?carSVG(CARS[car.carId]):'')+'</div><div class="inv-i"><div class="t">'+(car?car.text:'')+'</div><div class="rg">Машина заблокирована: нельзя продать, скрафтить или сменить номер</div></div></div>'+
+    '<div class="xp"><i id="tvProg" style="width:0%;background:'+col+'"></i></div><div class="sum"><span id="tvLeft">…</span><b>События '+evDone+'/'+t.events.length+'</b></div>'+
+    '<p class="lv-note" style="margin-top:8px">Поездка идёт по времени, даже если приложение закрыто. По приезде рулетка переключится на номера страны: '+C.spins+' платных круток.</p>'+
+    (ready?'<button class="pill green" id="tvClaim" style="margin-top:10px;width:100%;height:54px">Приехали — в страну</button>':'<button class="pill ghost" id="tvSkip" style="margin-top:10px;width:100%;height:50px">⏩ Ускорить за огромные деньги</button>')+'</div>';
+}
+function countryCardHTML(C){
+  var F=PLATE_FORMATS[C.id], col=TIER_UI[C.tier].c, open=state.level>=C.lvl, base=costRows(C,null,C.styles[0]), cd=tripCdLeft(), mt=TIERS[C.min||0];
+  var prev=F.prestige.map(function(pr){ var g=genPlate(F,TIERS[0],pr); return '<div class="tv-pv">'+plateFmtHTML({fmt:C.id,text:g.text,top:g.top,ov:g.ov})+'<span>'+pr.label+' · ×'+pr.mult+'</span></div>'; }).join('');
+  var needTxt=C.mode==='road'?'Нужен Запас хода от '+C.need:'Контейнер: нужна страховка машины';
+  var costs=base.rows.map(function(r){ return '<div class="srow"><span>'+r[0]+' '+r[1]+'</span><b>'+fmt(r[2])+'</b></div>'; }).join('');
+  var styles=C.styles.map(function(x){ return '<p class="lv-note" style="margin:6px 0"><b style="color:#fff">'+x.n+'.</b> '+x.d+'</p>'; }).join('');
+  var btn=!open?'<div class="empty" style="margin-top:12px">🔒 Откроется с '+C.lvl+' уровня</div>':
+    (cd>0?'<button class="pill ghost" disabled style="margin-top:12px;width:100%;height:54px;opacity:.55">Машина отдыхает · '+fmtDur(cd)+'</button>':
+    '<button class="pill green" id="tvGo" style="margin-top:12px;width:100%;height:54px">Собрать поездку · от '+fmt(base.total)+'</button>');
+  return '<div class="card"><div class="lv-top"><b style="font-size:18px">'+C.fl+' '+C.n+'</b><span style="color:'+col+'">'+TIER_UI[C.tier].n+' · ур. '+C.lvl+'</span></div>'+
+    '<div class="chips" style="margin-bottom:8px"><span class="chip">'+(C.mode==='road'?'🚗 своим ходом':'🚢 контейнером')+'</span><span class="chip">⏱ ~'+fmtDur(C.mins*60000)+'</span><span class="chip">🎰 '+C.spins+' круток · от «'+mt.name+'» · '+fmt(abPrice(C))+'</span></div>'+
+    '<div class="srow"><span>Курс</span><b>'+fxTxt(C.id)+'</b></div><div class="srow"><span>Множитель цены номеров</span><b>×'+String(C.mult).replace('.',',')+'</b></div><div class="srow"><span>Условия</span><b>'+needTxt+'</b></div>'+
+    '<div class="srow"><span>Номера на машине</span><b>обязательны</b></div>'+
+    '<div class="sub-title" style="text-align:left;margin:10px 0 4px">Расходы (минимум, зависят от машины и курса)</div><div class="tv-cost">'+costs+'</div>'+
+    '<div class="sub-title" style="text-align:left;margin:10px 0 2px">Как ехать</div>'+styles+
+    '<p class="lv-note" style="margin:6px 0">После возвращения машина отдыхает '+C.cd+' ч. Срезать время в пути можно, но стоит это целое состояние.</p>'+
+    '<div class="sub-title" style="text-align:left;margin:6px 0">Престиж-пул</div><div class="tv-pvs">'+prev+'</div>'+btn+'</div>';
+}
+function carPickSheet(C){
+  var cs=cars().filter(function(c){return !c.busy;}).sort(function(a,b){return carStats(b).rating-carStats(a).rating;});
+  if(!cs.length){ toast('Нет свободных машин — выбей машину в контейнерах'); return; }
+  var rows=cs.map(function(c){ var pl=tripPlan(c,C,C.styles[0]), s=carStats(c), cr=costRows(C,c,C.styles[0]);
+    return '<button class="bet-row" data-id="'+c.id+'"><div class="mini car">'+carSVG(CARS[c.carId])+'</div><div style="flex:1;padding-left:12px;text-align:left"><div class="n" style="color:'+c.tierColor+'">'+c.text+'</div><div class="s">'+carMiniStatsText(s)+'</div><div class="s">'+(c.plate?'номер: '+escH(c.plate.text)+' · ':'<span style="color:#fb7185">нет номера — тапни и повесь</span> · ')+'от '+fmt(cr.total)+(C.mode==='road'?' · износ −'+pl.wear+'%'+(pl.short?' · <span style="color:#fb7185">не хватает хода</span>':''):'')+'</div></div></button>'; }).join('');
+  var s=sheet('<h2>Выбери машину</h2><p class="d">'+C.fl+' '+C.n+' · без номеров на машине поездка невозможна, на время поездки машина блокируется</p><div class="bet-list">'+rows+'</div>');
+  s.el.querySelectorAll('.bet-row').forEach(function(b){ b.onclick=function(){
+    var car=findItem(b.getAttribute('data-id')); s.close(); if(!car) return;
+    if(!car.plate){ toast('Без номеров границу не пересечь — повесь номер'); plateSheet(car,function(pl){ takeOut(pl.id); attachPlate(car,pl); save(); updateControls(); confirmSheet(C,car); }); return; }
+    confirmSheet(C,car); }; });
+}
+function carMiniStatsText(s){ return 'Дальняк '+s.grade+' '+s.rating+' · ⛽ '+s.range+' · 🛠 '+s.rel+' · ⚡ '+s.speed; }
+function confirmSheet(C,car){
+  var si=0, s=sheet(''), box=s.el.querySelector('.sheet');
+  function draw(){
+    var st=C.styles[si], cr=costRows(C,car,st), pl=tripPlan(car,C,st), can=state.balance>=cr.total;
+    box.innerHTML='<div class="grab"></div><h2>Собери поездку</h2><div class="chips" id="stChips" style="margin-bottom:8px">'+C.styles.map(function(x,i){ return '<button class="chip'+(i===si?' on':'')+'" data-i="'+i+'">'+x.n+'</button>'; }).join('')+'</div>'+
+      '<p class="d" style="margin-bottom:8px">'+st.d+'</p><div class="card tv-cost" style="background:#1d1c21">'+
+      cr.rows.map(function(r){ return '<div class="srow"><span>'+r[0]+' '+r[1]+'</span><b>'+fmt(r[2])+'</b></div>'; }).join('')+
+      '<div class="srow" style="font-weight:800"><span>Итого</span><b>'+fmt(cr.total)+'</b></div></div>'+
+      '<div class="card tv-cost" style="background:#1d1c21"><div class="srow"><span>Маршрут</span><b>'+C.fl+' '+C.n+'</b></div><div class="srow"><span>Машина</span><b>'+car.text+'</b></div><div class="srow"><span>Номер на машине</span><b>'+escH(car.plate?car.plate.text:'—')+'</b></div>'+
+      '<div class="srow"><span>В пути</span><b>'+fmtDur(pl.mins*60000)+'</b></div>'+(C.mode==='road'?'<div class="srow"><span>Износ машины</span><b>−'+pl.wear+'%</b></div>':'')+
+      '<div class="srow"><span>Шанс таможни</span><b>'+Math.round(pl.custP*100)+'%</b></div><div class="srow"><span>Круток в стране</span><b>'+C.spins+' × '+fmt(abPrice(C))+'</b></div></div>'+
+      '<button class="pill green" id="cfGo" style="height:56px"'+(can?'':' disabled style="height:56px;opacity:.5"')+'>'+(can?'Поехали · '+fmt(cr.total):'Не хватает '+fmt(cr.total-state.balance))+'</button>';
+    box.querySelectorAll('#stChips .chip').forEach(function(b){ b.onclick=function(){ si=+b.getAttribute('data-i'); SND.click(); draw(); }; });
+    $('cfGo').onclick=function(){ if(!can) return; s.close(); startTrip(C,car,si); };
+  }
+  draw();
+}
+function travelBoot(){
+  if(!state.trip){ state.inventory.forEach(function(x){ if(x.busy) x.busy=false; }); return; }
+  if(!findItem(state.trip.carId)){ state.trip=null; return; }
+  if(tripBadge()) setTimeout(function(){ toast('✈️ В поездке есть новости'); },1200);
+}
+
+
+/* ================= v18: обучение «Путешествия» ================= */
+function tutDone(){ return !!(state.tut&&state.tut.travel); }
+function travelEntry(){ if(tutDone()) openProfile('travel'); else travelIntro(true); }
+function heroMap(){
+  var h='<svg viewBox="0 0 360 188" style="width:100%;display:block"><defs><pattern id="tviD" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".95" fill="#6c7bb8"/></pattern></defs>';
+  LAND.forEach(function(po){ h+='<polygon points="'+po.map(function(q){return mx(q[0]).toFixed(1)+','+my(q[1]).toFixed(1);}).join(' ')+'" fill="url(#tviD)"/>'; });
+  COUNTRIES.forEach(function(C,i){ var col=TIER_UI[C.tier].c, d=arcPath(C);
+    h+='<path d="'+d+'" class="tvi-arc" fill="none" stroke="'+col+'" stroke-width="1.3"/><circle cx="'+mx(C.lon)+'" cy="'+my(C.lat)+'" r="3.6" fill="'+col+'"/><circle cx="'+mx(C.lon)+'" cy="'+my(C.lat)+'" r="8" fill="none" stroke="'+col+'" class="tv-pulse" style="animation-delay:'+(i*.3)+'s"/>'+
+    '<text font-size="9" text-anchor="middle" dy="3"><animateMotion dur="'+(4+i*.7)+'s" repeatCount="indefinite" path="'+d+'" rotate="auto"/>✈</text>'; });
+  return h+'<rect x="'+(mx(HOME.lon)-3)+'" y="'+(my(HOME.lat)-3)+'" width="6" height="6" rx="1.5" fill="#fff"/><text x="'+(mx(HOME.lon)+6)+'" y="'+(my(HOME.lat)-5)+'" font-size="6.5" fill="#fff" font-weight="800">Дом</text></svg>';
+}
+function travelIntro(goAfter){
+  state.tut=state.tut||{}; state.tut.travel=1; save();
+  var by=cOf('BY'), cr=costRows(by,null,by.styles[0]);
+  var PL={by:plateFmtHTML({fmt:'BY',text:'7777 AX-7'}),de:plateFmtHTML({fmt:'DE',text:'B MW 777'}),jp:plateFmtHTML({fmt:'JP',top:'Токио 300',text:'A 77-77'}),us:plateFmtHTML({fmt:'US',top:'California',text:'GOAT'}),
+    kz:plateFmtHTML({fmt:'KZ',text:'777 ABC 02'}),cd:plateFmtHTML({fmt:'BY',text:'CD 007-7',ov:{bg:'#c4161c',fg:'#fff',bd:'#fff'}})};
+  var tiers=COUNTRIES.map(function(C){ var k=TIER_UI[C.tier].c; return '<div class="tvi-row"><span class="e">'+C.fl+'</span><b>'+C.n+'</b><span style="color:'+k+'">'+TIER_UI[C.tier].n+'</span><em style="color:'+k+'">ур. '+C.lvl+'</em></div>'; }).join('');
+  var SL=[
+   ['#38bdf8','<div class="tvi-art">'+heroMap()+'</div><h1>Путешествия <span>за номерами</span></h1><p>Отправляй свою машину в <b>другие страны</b> и привози оттуда <b>редкие зарубежные номера</b> — их не выбить ни в рулетке, ни в кейсах.</p><div class="tvi-g2"><div class="tvi-c" style="--k:#38bdf8"><span class="e">🌍</span><b>5 стран</b><span>От Беларуси до США — чем дальше, тем круче добыча.</span></div><div class="tvi-c" style="--k:#f472b6"><span class="e">⏳</span><b>Идёт офлайн</b><span>Поездка едет по времени, даже когда игра закрыта.</span></div></div>'],
+   ['#34d058','<h1>Выбери <span>страну</span></h1><p>Тапни точку на карте. Каждая страна — свой формат номеров, свой курс и свои условия.</p><div class="tvi-g2"><div class="tvi-c" style="--k:#34d058">'+PL.by+'<b>🇧🇾 Беларусь</b><span>Старт · от 30 ур.</span></div><div class="tvi-c" style="--k:#38bdf8">'+PL.de+'<b>🇩🇪 Германия</b><span>Автобан · 60 ур.</span></div><div class="tvi-c" style="--k:#fb923c">'+PL.jp+'<b>🇯🇵 Япония</b><span>Кораблём · 85 ур.</span></div><div class="tvi-c" style="--k:#f472b6">'+PL.us+'<b>🇺🇸 США</b><span>Route 66 · 100 ур.</span></div></div><div style="display:flex;flex-direction:column;gap:6px">'+tiers+'</div>'],
+   ['#fb923c','<h1>Собери <span>поездку</span></h1><p>Выбираешь <b>машину</b> (с номером на ней — без него границу не пересечь) и <b>стиль езды</b>. Пока она в пути — заблокирована.</p><div class="tvi-g2"><div class="tvi-c" style="--k:#34d058"><span class="e">🚦</span><b>По правилам</b><span>Без штрафов, но дорога занимает полное время.</span></div><div class="tvi-c" style="--k:#fb7185"><span class="e">🔥</span><b>Нарушаем всё</b><span>Время −40%, но камеры пришлют штрафы.</span></div></div><div class="tvi-art" style="padding:12px 14px"><div style="font-weight:800;margin-bottom:6px">'+by.fl+' Пример · Беларусь</div>'+cr.rows.map(function(r){ return '<div class="tvi-row" style="margin-bottom:4px;padding:7px 10px"><span class="e" style="font-size:18px">'+r[0]+'</span><span>'+r[1]+'</span><em>'+fmt(r[2])+'</em></div>'; }).join('')+'<div class="tvi-row" style="background:#ffffff1a"><b>Итого</b><em>'+fmt(cr.total)+'</em></div></div><p>Надо смотреть на <b>запас хода</b> и износ машины — слабая не доедет.</p>'],
+   ['#f472b6','<h1>События <span>в пути</span></h1><p>Дорога — это приключения. Иногда нужно <b>быстро принять решение</b>: заплатить сразу или рискнуть.</p><div class="tvi-g2"><div class="tvi-c" style="--k:#fb7185"><span class="e">📸</span><b>Камеры и блитцеры</b><span>Штраф сразу — или «письмо счастья» с процентами.</span></div><div class="tvi-c" style="--k:#fb923c"><span class="e">🐪</span><b>Верблюды в степи</b><span>Ночью по Казахстану бродят табуны.</span></div><div class="tvi-c" style="--k:#38bdf8"><span class="e">🌀</span><b>Тайфун</b><span>Шторм может застопорить судно.</span></div><div class="tvi-c" style="--k:#facc15"><span class="e">🎰</span><b>Лас-Вегас</b><span>35% на секретный номер — или деньги в казино.</span></div></div><p>Не успеваешь? Время в пути можно <b>срезать за огромные деньги</b>.</p>'],
+   ['#facc15','<h1>Добыча — <span>престиж-номера</span></h1><p>В стране рулетка переключается на <b>местные номера</b>: 10 платных круток. Среди них — <b>особые форматы</b> с огромным множителем цены.</p><div class="tvi-g2"><div class="tvi-c" style="--k:#facc15">'+PL.jp+'<b>Зороме «77-77»</b><span>×12 к цене</span></div><div class="tvi-c" style="--k:#fb7185">'+PL.cd+'<b>Дипломатический</b><span>×14 к цене</span></div><div class="tvi-c" style="--k:#38bdf8">'+plateFmtHTML({fmt:'DE',text:'B A 1'})+'<b>Короткий «B A 1»</b><span>×20 к цене</span></div><div class="tvi-c" style="--k:#34d058">'+PL.kz+'<b>Счастливые «777»</b><span>×10 к цене</span></div></div><div class="tvi-art" style="padding:12px 14px"><div class="tvi-row"><span class="e">💱</span><span>Цена зависит от <b>курса валюты</b> — он меняется, одинаковый у всех игроков.</span></div><div class="tvi-row" style="margin-top:6px"><span class="e">🇩🇪</span><span>Сейчас</span><em style="color:#fff">'+fxTxt('DE')+'</em></div></div>'],
+   ['#a78bfa','<h1>Готов <span>в дорогу?</span></h1><p>Коротко о правилах:</p><div style="display:flex;flex-direction:column;gap:8px"><div class="tvi-row"><span class="e">🔓</span><span>Режим открывается с <b>'+TRAVEL_MIN_LEVEL+' уровня</b></span></div><div class="tvi-row"><span class="e">🚗</span><span>Нужна машина <b>с номером</b> и нужный запас хода</span></div><div class="tvi-row"><span class="e">😴</span><span>После возвращения машина <b>отдыхает</b> несколько часов</span></div><div class="tvi-row"><span class="e">🧳</span><span>По приезде рулетка переключается на <b>номера страны</b>: по полной цене продаёшь только там, дома — через барыгу</span></div><div class="tvi-row"><span class="e">💡</span><span>Эту справку всегда можно открыть кнопкой «Как это работает»</span></div></div><div class="tvi-art" style="text-align:center;padding:16px"><div style="font-size:44px">🧭✈️🚢</div><div style="font-weight:800;margin-top:4px">Удачных дорог и жирных номеров!</div></div>']
+  ];
+  var i=0, el=document.createElement('div'); el.className='tvi';
+  el.innerHTML='<div class="tvi-top"><div class="tvi-dots">'+SL.map(function(){return '<i></i>';}).join('')+'</div><button class="tvi-x" aria-label="Закрыть">✕</button></div><div class="tvi-view"><div class="tvi-track">'+SL.map(function(x){ return '<div class="tvi-sl">'+x[1]+'</div>'; }).join('')+'</div></div><div class="tvi-ft"><button class="tvi-prev">‹</button><button class="tvi-next"></button></div>';
+  document.body.appendChild(el);
+  var tr=el.querySelector('.tvi-track'), nx=el.querySelector('.tvi-next'), pv=el.querySelector('.tvi-prev'), dots=el.querySelectorAll('.tvi-dots i');
+  function close(){ el.remove(); if(goAfter) openProfile('travel'); }
+  function go(n){ i=clamp(n,0,SL.length-1); tr.style.transform='translateX(-'+(i*100)+'%)'; el.style.setProperty('--c',SL[i][0]); dots.forEach(function(d,k){ d.className=k===i?'on':''; }); pv.style.visibility=i?'visible':'hidden'; nx.textContent=i===SL.length-1?(goAfter?'В путь! ✈️':'Понятно'):'Дальше'; el.querySelectorAll('.tvi-sl')[i].scrollTop=0; }
+  nx.onclick=function(){ SND.click(); if(i===SL.length-1) close(); else go(i+1); };
+  pv.onclick=function(){ SND.click(); go(i-1); };
+  el.querySelector('.tvi-x').onclick=close;
+  var x0=null; el.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  el.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>50) go(i+(dx<0?1:-1)); },{passive:true});
+  go(0);
+}
+/* ---- тур-подсветка: бургер → меню → «Путешествия» ---- */
+function tourSpot(target,title,txt,onTap){
+  var r=target.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2, R=Math.max(r.width,r.height)/2+9, below=cy<innerHeight*.55;
+  var o=document.createElement('div'); o.className='tour'; o.style.cssText='--x:'+cx+'px;--y:'+cy+'px;--r:'+R+'px';
+  o.innerHTML='<div class="tour-bg"></div><div class="tour-ring"></div><div class="tour-tip" style="'+(below?'top:'+(cy+R+18)+'px':'bottom:'+(innerHeight-cy+R+18)+'px')+'"><b>'+title+'</b>'+txt+'<small>Нажми на подсвеченное место</small></div><button class="tour-hit" aria-label="Нажми сюда"></button>';
+  document.body.appendChild(o);
+  o.querySelector('.tour-hit').onclick=function(){ o.remove(); onTap(); };
+  return o;
+}
+function tourStart(force){
+  if(!force&&state.tut&&state.tut.tour) return;
+  if([].some.call(document.querySelectorAll('.back,.scr,.mback,.tvi,.tour,#boot'),function(e){ return !e.hidden; })||!$('prof').hidden){ setTimeout(function(){ tourStart(force); },1200); return; }
+  state.tut=state.tut||{}; state.tut.tour=1; save();
+  tourSpot($('menuBtn'),'✨ Новый режим!','Загляни в меню — там появились <b>Путешествия</b>. Открой его.',function(){
+    ac(); SND.click(); openMenu();
+    setTimeout(function(){
+      var t=[].slice.call(document.querySelectorAll('.mback .mt')).filter(function(b){ return b.textContent.indexOf('Путешествия')>-1; })[0];
+      if(!t){ travelEntry(); return; }
+      tourSpot(t,'✈️ Путешествия','Отправляй машины за границу и привози редкие номера. Нажми — расскажем, как это работает.',function(){
+        var m=document.querySelector('.mback'); if(m) m.remove(); SND.click(); travelIntro(true);
+      });
+    },60);
+  });
 }
 
 /* ================= INIT ================= */
@@ -2498,17 +3357,17 @@ load(); colEnsure(); colScan(); state.cases=padCases(state.cases); state.eggs=st
 clearEgg(); setAccent(themeAc()||'#9aa3ad'); shownBal=state.balance; $('balance').textContent=fmt(state.balance);
 renderLevel(); renderBet();
 if(state.pending){
-  if(state.pending.kind!=='car') setStatic(state.pending);
+  if(state.pending.kind!=='car'&&!state.pending.cc) setStatic(state.pending);
   showResult(state.pending);
   applyReveal(state.pending);
-  if(state.pending.tier.id>=3) $(state.pending.kind==='car'?'raysS':'rays').classList.add('on');
+  if(state.pending.tier.id>=3) $(state.pending.kind==='car'?'raysS':(state.pending.cc?'raysA':'rays')).classList.add('on');
 }else{
   setStatic({letters:['А','В','С'],digits:'123',region:['77','Москва']});
   renderDots(null);
 }
 updateControls();
 if(state.pending&&state.pending.kind==='car') showCarCard(state.pending);
-checkAch();
+checkAch(); travelBoot(); setTimeout(tourStart,1500);
 var qp=null; try{ qp=new URLSearchParams(location.search).get('promo'); }catch(e){}
 if(qp){ setTimeout(function(){ redeem(qp).then(function(r){ if(r!=='ok') toast(r); try{ history.replaceState(null,'',location.pathname); }catch(e){} }); },800); }
 else if(dailyAvailable()&&!state.pending) setTimeout(openDaily,500);
